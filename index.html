@@ -23,10 +23,29 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <!-- navbar -->
+    <nav class="navigation">
+      <div class="navigation__image">
+        <a href="/"><img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500" />
+        </a>
+        <p>MikeBooks</p>
+      </div>
+      <ul class="navigation__actions">
+        <li><button type="button">Libros</button></li>
+        <li><button type="button">Iniciar sesion</button></li>
+        <li><button type="button">Registrate</button></li>
+        <li><select class="form-select" aria-label="Default select example">
+            <option selected>Perfil</option>
+            <option value="1">Mi perfil</option>
+            <option value="2">Cerrar sesión</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <main>
     <section id="registration-section">
-
       <article id="form-container" class="container">
         <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
           <div class="col-md-12 text-center">
@@ -113,9 +132,39 @@
         </form>
       </article>
     </section>
-
   </main>
-  <footer></footer>
+  <footer>
+    <!-- footer -->
+    <nav class="bottom align-items-center">
+      <ul class="bottom__media">
+        <li><a href="https://www.facebook.com/" target="_blank"> <i
+              class="icons-bisa bi-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank"> <i
+              class="icons-bisa bi-linkedin"></i></a></li>
+        <li><a href="https://www.youtube.com/" target="_blank"> <i class="icons-bisa bi-youtube"></i></a>
+        </li>
+        <li><a href="https://www.instagram.com/" target="_blank"> <i class="icons-bisa bi-instagram"></i></a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <span class="bottom__info">
+          <p>MikeBooks 2024 Riwi por</p>
+          <i class="icons-bisa bi-github"></i>
+        </span>
+        <ul
+          class="git__tag  d-flex align-items-center nav justify-content-center list-unstyled border-bottom p-0 m-0 gap-3">
+          <li><a class="shadow-icons" href="https://github.com/carobte" target="_blank">carobte</a></li><span>-</span>
+          <li><a class="shadow-icons" href="https://github.com/mspena14" target="_blank">mspena14</a></li><span>-</span>
+          <li><a class="shadow-icons" href="https://github.com/ecc97" target="_blank">ecc97</a></li><span>-</span>
+          <li><a class="shadow-icons" href="//github.com/anamh02" target="_blank">anamh02</a></li>
+        </ul>
+      </div>
+      <div class="bottom__image">
+        <a href="/"> <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500">  </a>
+        <p>MikeBooks</p>
+      </div>
+    </nav>
+  </footer>
   <script type="module" src="./src/js/main.js"></script>
 </body>
 

@@ -1,0 +1,115 @@
+
+main {
+    padding: 130px 0px;
+}
+
+.navigation{
+    background-color: var(--cream-color);
+    display: flex;
+    justify-content: space-between;
+    padding:0 1rem;
+    position: fixed;
+    width: -webkit-fill-available;
+}
+
+.navigation__image, .bottom__image {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+.navigation__image a img{
+    width: 90px;
+}
+.bottom__image a img {
+    width: 80px;
+    height: auto;
+}
+
+.navigation__image p, .bottom__image p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark-brown);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navigation__actions, .bottom__media {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.navigation__actions li button {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark-brown);
+    padding: 1rem 1.5rem;
+    background-color: var(--cream-color);
+    border: 3px solid var(--dark-brown);
+    border-radius: 8px;
+}
+
+.navigation__actions li select {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark-brown);
+    padding: 1rem 1rem;
+    background-color: var(--cream-color);
+    border: 3px solid var(--dark-brown);
+    border-radius: 8px;
+}
+
+.navigation__actions li button:hover {
+    color:var(--white);
+    background-color: var(--dark-brown);
+    cursor: pointer;
+}
+
+.bottom {
+    background-color: var(--cream-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: -webkit-fill-available;
+}
+
+.bottom__media li icons, .bottom__info a img {
+    width: 60px;
+    height: 60px;
+}
+
+.bottom__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.bottom__info p {
+    font-size: 16px;
+    font-weight: 500;
+    color:var(--dark-brown);
+    margin: 0;
+}
+ .git__tag li{
+    list-style: none;   
+}
+
+.git__tag li > a  {
+    color:var(--dark-brown);
+}
+
+.icons-bisa{
+    color:var(--dark-brown);
+}
+
+.icons-bisa:hover{
+    text-shadow: 1px 1px 2px var(--dark-brown);
+}
+
+ .shadow-icons:hover{
+    text-shadow: 1px 1px 2px var(--dark-brown); 
+}
