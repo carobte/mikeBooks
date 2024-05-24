@@ -1,28 +1,122 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a project for Riwi. Applying concepts and skills learned about JavaScript, DOM manipulation, Bootstrap, HTML, CSS">
-    <meta name="keywords" content="DOM, JS, JavaScript, HTML, CSS, Bootstrap, carobte, mspena14, anamh02, ecc97">
-    <meta name="sidedomain" content="https://github.com/carobte/mikeBooks/">
-    <meta name="organization" content="Riwi_Dell">
-    <meta name="author" content="Carolina Bustamante Escobar, Marlon Peña, Ana María, Edwin Carmona">
-    <meta name="designer" content="Carolina Bustamante Escobar, Marlon Peña, Ana María, Edwin Carmona">
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="revisit-after" content="15days">
-    <meta name="copyright" content="© 2024. MikeBooks. carobte, mspena14, anamh02, ecc97">
- 
-    <!-- Icon & Title -->
-    <link rel="shortcut icon" href="./public/icons/MikeBooks_icon2.ico" type="image/x-icon">
-    <title>MikeBooks</title>
 
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script type="module" src="./src/js/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="This is a project for Riwi. Applying concepts and skills learned about JavaScript, DOM manipulation, Bootstrap, HTML, CSS">
+  <meta name="keywords" content="DOM, JS, JavaScript, HTML, CSS, Bootstrap, carobte, mspena14, anamh02, ecc97">
+  <meta name="sidedomain" content="https://github.com/carobte/mikeBooks/">
+  <meta name="organization" content="Riwi_Dell">
+  <meta name="author" content="Carolina Bustamante Escobar, Marlon Peña, Ana María, Edwin Carmona">
+  <meta name="designer" content="Carolina Bustamante Escobar, Marlon Peña, Ana María, Edwin Carmona">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="15days">
+  <meta name="copyright" content="© 2024. MikeBooks. carobte, mspena14, anamh02, ecc97">
+
+  <!-- Icon & Title -->
+  <link rel="shortcut icon" href="./public/icons/MikeBooks_icon2.ico" type="image/x-icon">
+  <title>MikeBooks</title>
+
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <section id="registration-section">
+
+      <article id="form-container" class="container">
+        <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
+          <div class="col-md-12 text-center">
+            <h3 class="form-title fw-bold titles fw-bold ">Crea tu cuenta</h3>
+            <p class="form-description fw-medium general text fw-semibold">Ingresa los siguientes datos para
+              crear tu
+              cuenta
+            </p>
+          </div>
+          <div class="col-md-6">
+            <label for="username" class="form-label titles fw-semibold">Nombre de usuario</label>
+            <input type="text" class="form-control our-input bg-our-white" id="username" placeholder="MikeBooks01"
+              required>
+            <span class="invalid-feedback">Ingresa un nombre de usuario.</span>
+          </div>
+          <div class="col-md-6">
+            <label for="localidad" class="form-label titles fw-semibold">Localidad</label>
+            <input class="form-control our-input bg-our-white" list="datalistOptions" id="localidad"
+              placeholder="Escribe tu localidad..." required>
+            <datalist id="datalistOptions">
+              <option value="Medellin">Medellin</option>
+              <option value="Envigado">Envigado</option>
+              <option value="Copacabana">Copacabana</option>
+              <option value="Bello">Bello</option>
+              <option value="Itagui">Itagui</option>
+              <option value="Sabaneta">Sabaneta</option>
+            </datalist>
+            <span class="invalid-feedback">Ingresa tu localidad.</span>
+          </div>
+          <div class="col-md-6 ">
+            <label for="email" class="form-label titles fw-semibold">Correo electrónico</label>
+            <input type="email" class="form-control our-input bg-our-white " id="email" placeholder="ejemplo@email.com"
+              required>
+            <span class="invalid-feedback">Ingresa tu correo electrónico.</span>
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label titles fw-semibold">Número de teléfono</label>
+            <input type="tel" class="form-control our-input bg-our-white" id="phone" placeholder="XXX XXXX XXX"
+              required>
+            <span class="invalid-feedback">Ingresa tu número de teléfono.</span>
+          </div>
+          <div class="col-md-6">
+            <label for="password" class="form-label titles fw-semibold">Contraseña</label>
+            <input type="password" class="form-control our-input bg-our-white" id="password" placeholder="***********"
+              required>
+            <span class="invalid-feedback">Ingresa una contraseña.</span>
+          </div>
+          <div class="col-md-6 ">
+            <label for="confirm-password" class="form-label titles fw-semibold">Confirma tu contraseña</label>
+            <input type="password" class="form-control our-input bg-our-white" id="confirm-password"
+              placeholder="***********" required>
+            <span class="invalid-feedback">Confirma tu contraseña.</span>
+          </div>
+          <div class=" col-12">
+            <label for="profile-picture" class="form-label titles fw-semibold">Foto de perfil</label>
+            <input type="file" class="form-control our-input bg-our-white file-input" id="profile-picture" required>
+            <span class="invalid-feedback">Agrega una foto de perfil.</span>
+          </div>
+          <div class="col-12 d-flex justify-content-around">
+            <input type="radio" class="btn btn-check " name="options-base" id="standard" autocomplete="off" checked>
+            <label class="btn py-4 my-label-check titles fw-bold" for="standard" data-bs-toggle="tooltip"
+              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+              data-bs-title="Intercambia o vende tu libro.">Plan standard
+              <p class="price">$0</p>
+            </label>
+            <input type="radio" class="btn btn-check" name="options-base" id="premium" autocomplete="off">
+            <label class="btn py-4 my-label-check titles fw-bold" for="premium" data-bs-toggle="tooltip"
+              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+              data-bs-title="Intercambios y ventas ilimitadas.">Plan premium
+              <p class="price mb-0">$50.000</p>
+            </label>
+          </div>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <button type="submit" class="btn px-5 py-3 fw-semibold send-btn">Enviar</button>
+          </div>
+          <div class="col-md-12 text-center mb-3 ">
+            <p class="form-terms general-text fw-semibold">Al enviar tus datos aceptas nuestros <a href=""
+                class="fw-bold terms" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Conocelos dando click aquí.">términos y
+                condiciones</a>.
+            </p>
+          </div>
+        </form>
+      </article>
+    </section>
+
+  </main>
+  <footer></footer>
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
 </html>
