@@ -1,53 +1,61 @@
+@import url(./styles.scss);
 /* Forms styles*/
 /* Tolltips class from bootstrap */
-.custom-tooltip {
+label > [data-bs-custom-class=custom-tooltip] {
     --bs-tooltip-bg: var(--lighter);
     --bs-tooltip-color: var(--dark-brown);
     font-weight: 600;
 }
 
-.our-input {
+div > .our-input {
     border: 1px solid var(--dark-brown);
 }
 
-.our-input:focus {
+div > .our-input:focus {
     box-shadow: 2px 2px 0px var(--dark-brown);
     border: 1px solid var(--dark-brown);
 }
 
-.my-btn {
+div > .send-btn {
     background-color: var(--dark-brown);
     color: var(--white);
 }
 
-.price {
-    margin-bottom: 0;
-}
-
-.send-btn:hover {
+div > .send-btn:hover {
     background-color: var(--dark-brown);
     color: var(--white);
     filter: grayscale(10%);
     border: var(--white) solid 1px;
 }
 
-.my-label-check {
-    border: 1px solid var(--dark-brown);
+.price {
+    margin-bottom: 0;
 }
 
-.btn-check:checked+.btn,
-.btn-check:checked+.price {
+
+div > .my-label-check {
+    border: 1px solid var(--dark-brown);
+    
+}
+
+div > .btn-check:checked+.btn {
+    color: var(--dark-brown);
+    border: 3px solid var(--dark-brown);
+    font-weight: 700; 
+}
+
+div > .btn-check:checked+.price {
     color: var(--dark-brown);
     border: 3px solid var(--dark-brown);
     font-weight: 700;
 }
 
-.btn-check:hover+.btn {
+div > .btn-check:hover+.btn {
     color: var(--dark-brown);
     border: 3px solid var(--dark-brown);
 }
 
-.file-input {
+div > .file-input {
     border: 1px solid var(--dark-brown);
     color: var(--dark-brown);
 }
