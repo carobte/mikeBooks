@@ -1,0 +1,79 @@
+@import url(./styles.scss);
+/* Forms styles*/
+/* Tolltips class from bootstrap */
+label > [data-bs-custom-class=custom-tooltip] {
+    --bs-tooltip-bg: var(--lighter);
+    --bs-tooltip-color: var(--dark-brown);
+    font-weight: 600;
+}
+
+div > .our-input {
+    border: 1px solid var(--dark-brown);
+}
+
+div > .our-input:focus {
+    box-shadow: 2px 2px 0px var(--dark-brown);
+    border: 1px solid var(--dark-brown);
+}
+
+div > .send-btn {
+    background-color: var(--dark-brown);
+    color: var(--white);
+}
+
+div > .send-btn:hover {
+    background-color: var(--dark-brown);
+    color: var(--white);
+    filter: grayscale(10%);
+    border: var(--white) solid 1px;
+}
+
+.price {
+    margin-bottom: 0;
+}
+
+
+div > .my-label-check {
+    border: 1px solid var(--dark-brown);
+    
+}
+
+div > .btn-check:checked+.btn {
+    color: var(--dark-brown);
+    border: 3px solid var(--dark-brown);
+    font-weight: 700; 
+}
+
+div > .btn-check:checked+.price {
+    color: var(--dark-brown);
+    border: 3px solid var(--dark-brown);
+    font-weight: 700;
+}
+
+div > .btn-check:hover+.btn {
+    color: var(--dark-brown);
+    border: 3px solid var(--dark-brown);
+}
+
+div > .file-input {
+    border: 1px solid var(--dark-brown);
+    color: var(--dark-brown);
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    color: var(--dark-brown) !important;
+    background: var(--cream-color) !important;
+    border-color: var(--dark-brown) !important;
+}
+
+.terms {
+    color: var(--darkest-brown)
+}
+
+.terms:hover {
+    color: var(--dark-brown);
+    font-weight: 900;
+    text-shadow: 1px 1px 4px var(--dark-brown);
+    text-decoration: none;
+}
