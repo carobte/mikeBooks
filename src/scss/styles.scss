@@ -1,3 +1,16 @@
+/* Color variables */
+:root {
+    --darkest-brown: #351e1a;
+    --dark-brown: #643f38;
+    --cream-color: #f0dcd8;
+    --lighter: #f6ecea;
+    --white: #f7f7f7;
+}
+
+/* Reset default styles for tooltips*/
+$tooltip-bg: var(--lighter);
+$tooltip-color: var(--dark-brown);
+
 /* Imports font and icons */
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap');
@@ -7,16 +20,6 @@
 @import url('./myProfile.scss');
 @import url('./header&footer.scss');
 @import url('./forms.scss');
-
-/* Color variables */
-
-:root {
-    --darkest-brown: #351e1a;
-    --dark-brown: #643f38;
-    --cream-color: #f0dcd8;
-    --lighter: #f6ecea;
-    --white: #f7f7f7;
-}
 
 /* Reset default styles*/
 
