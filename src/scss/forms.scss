@@ -1,9 +1,10 @@
-@import url(./styles.scss);
 /* Forms styles*/
 /* Tolltips class from bootstrap */
-label > [data-bs-custom-class=custom-tooltip] {
-    --bs-tooltip-bg: var(--lighter);
-    --bs-tooltip-color: var(--dark-brown);
+// Estilos personalizados para tooltips
+.tooltip.custom-tooltip .tooltip-inner {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(53, 30, 28, 0.1);
     font-weight: 600;
 }
 
@@ -12,7 +13,7 @@ div > .our-input {
 }
 
 div > .our-input:focus {
-    box-shadow: 2px 2px 0px var(--dark-brown);
+    box-shadow: 0.125rem 0.125rem 0 var(--dark-brown);
     border: 1px solid var(--dark-brown);
 }
 
@@ -26,6 +27,7 @@ div > .send-btn:hover {
     color: var(--white);
     filter: grayscale(10%);
     border: var(--white) solid 1px;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(53, 30, 28, 0.1);
 }
 
 .price {
@@ -72,8 +74,8 @@ div > .file-input {
 }
 
 .terms:hover {
-    color: var(--dark-brown);
+    color: var(--darkest-brown);
     font-weight: 900;
-    text-shadow: 1px 1px 4px var(--dark-brown);
+    text-shadow: 0 0.25rem 0.5rem rgba(100, 63, 56, 0.5);
     text-decoration: none;
 }
