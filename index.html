@@ -44,128 +44,148 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="bg-our-white">
     <!-- About us section -->
     <section class="d-flex flex-wrap justify-content-evenly align-items-center mt-5">
       <article id="about-us">
-          <h1 class="titles fw-bold mb-5">Sobre nosotros</h1>
-          <p class="titles fs-5">MikeBooks es una innovadora plataforma web diseñada para conectar a personas
-              apasionadas por la lectura dentro de la misma ciudad o sus alrededores. Nuestro objetivo es
-              facilitar el
-              intercambio y la venta de libros de una manera sencilla, segura y eficiente.</p>
-          <ul>
-              <li class="titles fs-5"><span class="fw-bolder">Explora una amplia variedad de libros:</span>
-                  Descubre libros disponibles para intercambio o venta en
-                  tu localidad.</li>
-              <li class="titles fs-5"><span class="fw-bolder">Publicar tus propios libros:</span> Ofrece tus
-                  libros a otros lectores interesados, ya sea para intercambiar o vender.</li>
-          </ul>
-          <p class="titles fs-5">Únete a nosotros y descubre una nueva forma de disfrutar y compartir libros en tu
-              ciudad. ¡Tu próximo libro favorito te está esperando!</p>
-          <!--  <p class="titles fs-5"><a class="titles fs-5 modal-anchor text-decoration-none"> ¡Regístrate
+        <h1 class="titles fw-bold mb-5">Sobre nosotros</h1>
+        <p class="titles fs-5">MikeBooks es una innovadora plataforma web diseñada para conectar a personas
+          apasionadas por la lectura dentro de la misma ciudad o sus alrededores. Nuestro objetivo es
+          facilitar el
+          intercambio y la venta de libros de una manera sencilla, segura y eficiente.</p>
+        <ul>
+          <li class="titles fs-5"><span class="fw-bolder">Explora una amplia variedad de libros:</span>
+            Descubre libros disponibles para intercambio o venta en
+            tu localidad.</li>
+          <li class="titles fs-5"><span class="fw-bolder">Publicar tus propios libros:</span> Ofrece tus
+            libros a otros lectores interesados, ya sea para intercambiar o vender.</li>
+        </ul>
+        <p class="titles fs-5">Únete a nosotros y descubre una nueva forma de disfrutar y compartir libros en tu
+          ciudad. ¡Tu próximo libro favorito te está esperando!</p>
+        <!--  <p class="titles fs-5"><a class="titles fs-5 modal-anchor text-decoration-none"> ¡Regístrate
                   aquí!</a> 
                   O si ya tienes una cuenta <a class="titles fs-5 modal-anchor text-decoration-none"> Inicia sesión</a></p> -->
       </article>
       <figure>
-          <img class="rounded shadow"
-              src="https://p0.pikist.com/photos/574/1015/beautiful-books-bookstore-casual-education-eyewear-knowledge-library-reading-side-view.jpg"
-              alt="mujer leyendo" height="400px">
+        <img class="rounded shadow"
+          src="https://p0.pikist.com/photos/574/1015/beautiful-books-bookstore-casual-education-eyewear-knowledge-library-reading-side-view.jpg"
+          alt="mujer leyendo" height="400px">
       </figure>
-  </section>
-
-    <section id="registration-section">
-      <article id="form-container" class="container">
-        <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
-          <div class="col-md-12 text-center">
-            <h3 class="form-title fw-bold titles fw-bold ">Crea tu cuenta</h3>
-            <p class="form-description fw-medium general text fw-semibold">Ingresa los siguientes datos para crear tu cuenta
-            </p>
-          </div>
-          <div class="col-md-6">
-            <label for="username" class="form-label titles fw-semibold">Nombre de usuario</label>
-            <input type="text" class="form-control our-input bg-our-white" id="username" placeholder="MikeBooks01"
-              required>
-            <span class="invalid-feedback">Ingresa un nombre de usuario.</span>
-          </div>
-          <div class="col-md-6">
-            <label for="localidad" class="form-label titles fw-semibold">Localidad</label>
-            <input class="form-control our-input bg-our-white" list="datalistOptions" id="localidad"
-              placeholder="Escribe tu localidad..." required>
-            <datalist id="datalistOptions">
-              <option value="Medellin">Medellin</option>
-              <option value="Envigado">Envigado</option>
-              <option value="Copacabana">Copacabana</option>
-              <option value="Bello">Bello</option>
-              <option value="Itagui">Itagui</option>
-              <option value="Sabaneta">Sabaneta</option>
-            </datalist>
-            <span class="invalid-feedback">Ingresa tu localidad.</span>
-          </div>
-          <div class="col-md-6 ">
-            <label for="email" class="form-label titles fw-semibold">Correo electrónico</label>
-            <input type="email" class="form-control our-input bg-our-white " id="email" placeholder="ejemplo@email.com"
-              required>
-            <span class="invalid-feedback">Ingresa tu correo electrónico.</span>
-          </div>
-          <div class="col-md-6">
-            <label for="phone" class="form-label titles fw-semibold">Número de teléfono</label>
-            <input type="tel" class="form-control our-input bg-our-white" id="phone" placeholder="XXX XXXX XXX"
-              required>
-            <span class="invalid-feedback">Ingresa tu número de teléfono.</span>
-          </div>
-          <div class="col-md-6">
-            <label for="password" class="form-label titles fw-semibold">Contraseña</label>
-            <input type="password" class="form-control our-input bg-our-white" id="password" placeholder="***********"
-              required>
-            <span class="invalid-feedback">Ingresa una contraseña.</span>
-          </div>
-          <div class="col-md-6 ">
-            <label for="confirm-password" class="form-label titles fw-semibold">Confirma tu contraseña</label>
-            <input type="password" class="form-control our-input bg-our-white" id="confirm-password"
-              placeholder="***********" required>
-            <span class="invalid-feedback">Confirma tu contraseña.</span>
-          </div>
-          <div class=" col-12">
-            <label for="profile-picture" class="form-label titles fw-semibold">Foto de perfil</label>
-            <input type="file" class="form-control our-input bg-our-white file-input" id="profile-picture" required>
-            <span class="invalid-feedback">Agrega una foto de perfil.</span>
-          </div>
-          <div class="col-12 d-flex justify-content-around">
-            <input type="radio" class="btn btn-check " name="options-base" id="standard" autocomplete="off" checked>
-            <label class="btn py-4 my-label-check titles fw-bold" for="standard" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Intercambia o vende tu libro.">Plan standard
-              <p class="price">$0</p>
-            </label>
-            <input type="radio" class="btn btn-check" name="options-base" id="premium" autocomplete="off">
-            <label class="btn py-4 my-label-check titles fw-bold" for="premium" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Intercambios y ventas ilimitadas.">Plan premium
-              <p class="price mb-0">$50.000</p>
-            </label>
-          </div>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <button type="submit" class="btn px-5 py-3 fw-semibold send-btn">Enviar</button>
-          </div>
-          <div class="col-md-12 text-center mb-3 ">
-            <p class="form-terms general-text fw-semibold">Al enviar tus datos aceptas nuestros 
-              <a target="_blank" href="./public/documents/Términos y Condiciones de Uso.pdf"
-                class="fw-bold terms">términos y condiciones</a>.
-            </p>
-          </div>
-        </form>
-      </article>
     </section>
+
+    <!--  Books Section -->
+    <h2 class="titles fw-bold mt-5 mb-3 text-center"> Libros </h2>
+    <section id="container-books" class="d-flex flex-wrap justify-content-evenly gap-5">
+      <!-- cards -->
+
+      <!-- User logged in -->
+      <article class="card bg-our-white mt-5">
+        <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal1">
+          <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+            class="card-img-top object-fit-contain pt-2" alt="Harry Potter" height="70%">
+          <div class="card-body py-0">
+            <h5 class="card-title mx-0  my-2 py-0 titles">Harry Potter (1997)</h5>
+            <p class="card-text d-flex justify-content-between m-0 titles"> J.k Rowling <span>
+                Planeta</span></p>
+            <p class="card-text d-flex justify-content-between m-0 titles"> Medellín <span> Venta
+                (precio)</span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+        <section id="registration-section">
+          <article id="form-container" class="container">
+            <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
+              <div class="col-md-12 text-center">
+                <h3 class="form-title fw-bold titles fw-bold ">Crea tu cuenta</h3>
+                <p class="form-description fw-medium general text fw-semibold">Ingresa los siguientes datos para crear
+                  tu cuenta
+                </p>
+              </div>
+              <div class="col-md-6">
+                <label for="username" class="form-label titles fw-semibold">Nombre de usuario</label>
+                <input type="text" class="form-control our-input bg-our-white" id="username" placeholder="MikeBooks01"
+                  required>
+                <span class="invalid-feedback">Ingresa un nombre de usuario.</span>
+              </div>
+              <div class="col-md-6">
+                <label for="localidad" class="form-label titles fw-semibold">Localidad</label>
+                <input class="form-control our-input bg-our-white" list="datalistOptions" id="localidad"
+                  placeholder="Escribe tu localidad..." required>
+                <datalist id="datalistOptions">
+                  <option value="Medellin">Medellin</option>
+                  <option value="Envigado">Envigado</option>
+                  <option value="Copacabana">Copacabana</option>
+                  <option value="Bello">Bello</option>
+                  <option value="Itagui">Itagui</option>
+                  <option value="Sabaneta">Sabaneta</option>
+                </datalist>
+                <span class="invalid-feedback">Ingresa tu localidad.</span>
+              </div>
+              <div class="col-md-6 ">
+                <label for="email" class="form-label titles fw-semibold">Correo electrónico</label>
+                <input type="email" class="form-control our-input bg-our-white " id="email"
+                  placeholder="ejemplo@email.com" required>
+                <span class="invalid-feedback">Ingresa tu correo electrónico.</span>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label titles fw-semibold">Número de teléfono</label>
+                <input type="tel" class="form-control our-input bg-our-white" id="phone" placeholder="XXX XXXX XXX"
+                  required>
+                <span class="invalid-feedback">Ingresa tu número de teléfono.</span>
+              </div>
+              <div class="col-md-6">
+                <label for="password" class="form-label titles fw-semibold">Contraseña</label>
+                <input type="password" class="form-control our-input bg-our-white" id="password"
+                  placeholder="***********" required>
+                <span class="invalid-feedback">Ingresa una contraseña.</span>
+              </div>
+              <div class="col-md-6 ">
+                <label for="confirm-password" class="form-label titles fw-semibold">Confirma tu contraseña</label>
+                <input type="password" class="form-control our-input bg-our-white" id="confirm-password"
+                  placeholder="***********" required>
+                <span class="invalid-feedback">Confirma tu contraseña.</span>
+              </div>
+              <div class=" col-12">
+                <label for="profile-picture" class="form-label titles fw-semibold">Foto de perfil</label>
+                <input type="file" class="form-control our-input bg-our-white file-input" id="profile-picture" required>
+                <span class="invalid-feedback">Agrega una foto de perfil.</span>
+              </div>
+              <div class="col-12 d-flex justify-content-around">
+                <input type="radio" class="btn btn-check " name="options-base" id="standard" autocomplete="off" checked>
+                <label class="btn py-4 my-label-check titles fw-bold" for="standard" data-bs-toggle="tooltip"
+                  data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Intercambia o vende tu libro.">Plan standard
+                  <p class="price">$0</p>
+                </label>
+                <input type="radio" class="btn btn-check" name="options-base" id="premium" autocomplete="off">
+                <label class="btn py-4 my-label-check titles fw-bold" for="premium" data-bs-toggle="tooltip"
+                  data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Intercambios y ventas ilimitadas.">Plan premium
+                  <p class="price mb-0">$50.000</p>
+                </label>
+              </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn px-5 py-3 fw-semibold send-btn">Enviar</button>
+              </div>
+              <div class="col-md-12 text-center mb-3 ">
+                <p class="form-terms general-text fw-semibold">Al enviar tus datos aceptas nuestros
+                  <a target="_blank" href="./public/documents/Términos y Condiciones de Uso.pdf"
+                    class="fw-bold terms">términos y condiciones</a>.
+                </p>
+              </div>
+            </form>
+          </article>
+        </section>
   </main>
   <footer>
     <!-- footer -->
     <nav class="bottom align-items-center">
       <ul class="bottom__media">
-        <li><a href="https://www.facebook.com/" target="_blank"> <i
-              class="icons-bisa bi-facebook"></i></a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank"> <i
-              class="icons-bisa bi-linkedin"></i></a></li>
+        <li><a href="https://www.facebook.com/" target="_blank"> <i class="icons-bisa bi-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank"> <i class="icons-bisa bi-linkedin"></i></a></li>
         <li><a href="https://www.youtube.com/" target="_blank"> <i class="icons-bisa bi-youtube"></i></a>
         </li>
         <li><a href="https://www.instagram.com/" target="_blank"> <i class="icons-bisa bi-instagram"></i></a>
@@ -185,7 +205,7 @@
         </ul>
       </div>
       <div class="bottom__image">
-        <a href="/"> <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500">  </a>
+        <a href="/"> <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500"> </a>
         <p>MikeBooks</p>
       </div>
     </nav>
