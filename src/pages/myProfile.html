@@ -63,6 +63,78 @@
         <section id="user-books" class="container">
         
         </section>
+
+        <section id="books-form-section" class="d-flex w-100 flex-wrap mt-5">
+            <article class="col-6 d-flex justify-content-center">
+                <form id="books-form" class="row g-5 w-100 bg-our-white needs-validation pt-5" novalidate
+                    autocomplete="off">
+                    <div class="col-md-12 text-center mt-0">
+                        <h3 class="form-title fw-bold titles fw-semibold">Información de tu libro</h3>
+                        <p class="form-description fw-medium titles fw-semibold">Ingresa los siguientes datos para
+                            guardar
+                            tu libro
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="book-name" class="form-label titles fw-semibold">Nombre o título del libro</label>
+                        <input type="text" class="form-control our-input bg-our-white" id="book-name"
+                            placeholder="Título" required>
+                        <span class="invalid-feedback">Ingresa el nombre o título del libro.</span>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label for="publishing-house" class="form-label titles fw-semibold">Editorial</label>
+                        <input type="text" class="form-control our-input bg-our-white input-registration"
+                            id="publishing-house" placeholder="Editorial del libro" required>
+                        <span class="invalid-feedback">Ingrese el nombre de la ditorial.</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="publication-year" class="form-label titles fw-semibold">Año de publicación</label>
+                        <input type="text" class="form-control our-input bg-our-white" id="publication-year"
+                            placeholder="Año de publicación" required>
+                        <span class="invalid-feedback">Ingrese el año de publicación del libro.</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="author" class="form-label titles fw-semibold">Autor</label>
+                        <input type="text" class="form-control our-input bg-our-white" id="author"
+                            placeholder="Autor del libro" required>
+                        <span class="invalid-feedback">Ingrese el nombre del autor del libro.</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="transaction" class="form-label titles fw-semibold">Intercambio o venta</label>
+                        <select class="form-select our-input bg-our-white" id="transaction" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                            <option value="trade">Intercambio</option>
+                            <option value="sell">Venta</option>
+                        </select>
+                        <span class="invalid-feedback">Elige una opción.</span>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label for="price" class="form-label titles fw-semibold">Precio</label>
+                        <input type="text" class="form-control our-input bg-our-white" id="price"
+                            placeholder="$Precio del libro." required>
+                        <span class="invalid-feedback">Ingrese el precio que tendrá tu libro.</span>
+                    </div>
+                    <div class="col-12">
+                        <label for="description" class="form-label titles fw-semibold">Descripción</label>
+                        <textarea class="form-control our-input bg-our-white" id="description" rows="7"
+                            placeholder="Agrega una breve descripción del estado de tu libro..." required></textarea>
+                        <span class="invalid-feedback">Agrega una descripción de tu libro.</span>
+                    </div>
+                    <div class=" col-12">
+                        <label for="input-image" class="form-label titles fw-semibold">Imagen del libro</label>
+                        <input type="file" class="form-control our-input bg-our-white file-input" id="input-image"
+                            required>
+                        <span class="invalid-feedback">Agrega una foto del libro.</span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center mb-5">
+                        <button type="submit" class="btn my-btn px-5 py-3 fw-semibold send-btn">Guardar</button>
+                    </div>
+                </form>
+            </article>
+            <article class=" col-6 text-center d-flex align-items-center  ">
+                <i class="bi bi-book-half book-icon align-self-center w-100 h-100"></i>
+            </article>
+        </section>
    </main>
 
    <footer></footer>
