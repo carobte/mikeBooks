@@ -24,24 +24,38 @@
 
 <body>
   <header>
-    <!-- navbar -->
-    <nav class="navigation">
-      <div class="navigation__image">
-        <a href="/"><img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500" />
+    <nav class="navbar navbar-expand-lg mb-4 navigation__container">
+      <div class="container-fluid">
+        <a class="navbar-brand navigation__image" href="#">
+          <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="100" />
+          <p>MikeBooks</p>
         </a>
-        <p>MikeBooks</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="btn" href="#">Libros</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn" aria-current="page" href="#">Registrate</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn" href="#">Iniciar seccion</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Perfil
+              </button>
+              <ul class="dropdown-menu ">
+                <li><a class="dropdown-item" href="./src/pages/myProfile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="#">Cerrar seccion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul class="navigation__actions">
-        <li><button type="button">Libros</button></li>
-        <li><button type="button">Iniciar sesion</button></li>
-        <li><button type="button">Registrate</button></li>
-        <li><select class="form-select" aria-label="Default select example">
-            <option selected disabled>Perfil</option>
-            <option value="my-profile">Mi perfil</option>
-            <option value="logout">Cerrar sesión</option>
-          </select>
-        </li>
-      </ul>
     </nav>
   </header>
   <main class="bg-our-white">
@@ -419,8 +433,7 @@
     </section>
   </main>
   <footer>
-    <!-- footer -->
-    <nav class="bottom align-items-center">
+    <nav class="bottom align-items-center nav-mobile py-4">
       <ul class="bottom__media">
         <li><a href="https://www.facebook.com/" target="_blank"> <i class="icons-bisa bi-facebook"></i></a></li>
         <li><a href="https://www.linkedin.com/" target="_blank"> <i class="icons-bisa bi-linkedin"></i></a></li>
@@ -429,7 +442,7 @@
         <li><a href="https://www.instagram.com/" target="_blank"> <i class="icons-bisa bi-instagram"></i></a>
         </li>
       </ul>
-      <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-3 nav-items-mobile">
         <span class="bottom__info">
           <p>MikeBooks 2024 Riwi por</p>
           <i class="icons-bisa bi-github"></i>

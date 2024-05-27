@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+.navigation {
+    &__container {
+        background-color: $cream-color;
+        .dropdown-menu[data-bs-popper] {
+            right: 0 !important;
+            left: unset;
+        }
+
+        .nav-item {
+            color: $dark-brown;
+            border: 3px solid $dark-brown;
+            border-radius: 5px;
+            &:hover {
+                color: #fff;
+                background-color: $dark-brown;
+            }
+        }
+
+        .navbar-nav {
+            column-gap: 5px;
+        }
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        p {
+            font-size: 20px;
+            font-weight: 600;
+            color: $dark-brown;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        a img {
+            width: 80px;
+            height: auto;
+        }
+    }
+
+}

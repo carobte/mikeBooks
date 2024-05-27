@@ -1,4 +1,5 @@
 /* Color variables */
+
 :root {
     --darkest-brown: #351e1a;
     --dark-brown: #643f38;
@@ -22,7 +23,8 @@ $tooltip-color: var(--dark-brown);
 
 // Import styles
 @import url('./profile.scss');
-@import url('./header&footer.scss');
+@import url('./footer.scss');
+@import url('./header.scss');
 @import url('./forms.scss');
 
 /* Reset default styles*/
