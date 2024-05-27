@@ -357,12 +357,49 @@
       </article>
     </section>
 
-    <section id="login-section" class="">
-      <article id="safety-recommendations" class="">
+    <section id="login-section" class="d-flex mt-5">
+      <article id="safety-recommendations" class="col-lg-7 d-flex align-items-center flex-column p-3">
+        <h2 class="titles fw-bold">Recomendaciones</h2>
+        <p class="general-text">Para garantizar una experiencia segura y satisfactoria al utilizar MikeBooks, te recomendamos
+          seguir estas pautas de seguridad:</p>
+        <ul class="general-text">
+          <li>Verificar el estado del libro: Solicita al dueño fotografías, videos actuales y demás información que
+            requieras del libro.</li>
+          <li class="">Realizar encuentros en espacios públicos: Programa los encuentros en lugares públicos y concurridos, como
+            cafeterías, bibliotecas o centros comerciales. </li>
+          <li>Informar a un amigo o familiar: Siempre avisa a un amigo o familiar sobre el lugar y la hora en que te
+            encontrarás con la otra persona. Proporciona detalles sobre la persona con la que te reunirás, como su
+            nombre y número de contacto.</li>
+          <li>No compartir información personal: Evita compartir información personal sensible innecesaria, como tu cédula o dirección residencial.</li>
+          <li>Confía en tu instinto: Si en algún momento te sientes incómodo o algo no parece estar bien, no dudes en cancelar la reunión o la transacción. Tu seguridad es lo más importante.</li>
+          <li>Si experimentas algún comportamiento sospechoso, repórtalo a MikeBooks al correo <span class="titles fw-bold">mikebooks@gmail.com</span>para que podamos tomar las medidas necesarias.</li>
+        </ul>
+        <p class="general-text">Siguiendo estas recomendaciones, podrás disfrutar de una experiencia segura y agradable al
+          utilizar MikeBooks para intercambiar o vender libros. ¡Gracias por ser parte de nuestra comunidad!</p>
 
       </article>
-      <article id="login-form-container" class="">
-        
+
+      <article id="login-form-container" class="col-lg-5">
+        <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
+          <div class="col-12 text-center">
+            <h3 class="form-title fw-bold titles fw-bold ">Inicio sesión_</h3>
+          </div>
+          <div class="col-12">
+            <label for="username" class="form-label titles fw-semibold">Nombre de usuario</label>
+            <input type="text" class="form-control our-input bg-our-white" id="username" placeholder="MikeBooks01"
+              required>
+            <span class="invalid-feedback">Ingresa un nombre de usuario.</span>
+          </div>
+          <div class="col-12">
+            <label for="password" class="form-label titles fw-semibold">Contraseña</label>
+            <input type="password" class="form-control our-input bg-our-white" id="password" placeholder="***********"
+              required>
+            <span class="invalid-feedback">Ingresa una contraseña.</span>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <button type="submit" class="btn px-5 py-3 fw-semibold send-btn">Enviar</button>
+          </div>
+        </form>
       </article>
     </section>
   </main>
