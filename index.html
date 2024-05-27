@@ -44,15 +44,240 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="bg-our-white">
+    <!-- About us section -->
+    <section class="d-flex flex-wrap justify-content-evenly align-items-center">
+      <article id="about-us">
+        <h1 class="titles fw-bold mb-5">Sobre nosotros</h1>
+        <p class="titles fs-5">MikeBooks es una innovadora plataforma web diseñada para conectar a personas
+          apasionadas por la lectura dentro de la misma ciudad o sus alrededores. Nuestro objetivo es
+          facilitar el
+          intercambio y la venta de libros de una manera sencilla, segura y eficiente.</p>
+        <ul>
+          <li class="titles fs-5"><span class="fw-bolder">Explora una amplia variedad de libros:</span>
+            Descubre libros disponibles para intercambio o venta en
+            tu localidad.</li>
+          <li class="titles fs-5"><span class="fw-bolder">Publicar tus propios libros:</span> Ofrece tus
+            libros a otros lectores interesados, ya sea para intercambiar o vender.</li>
+        </ul>
+        <p class="titles fs-5">Únete a nosotros y descubre una nueva forma de disfrutar y compartir libros en tu
+          ciudad. ¡Tu próximo libro favorito te está esperando!</p>
+        <!--  <p class="titles fs-5"><a class="titles fs-5 modal-anchor text-decoration-none"> ¡Regístrate
+                  aquí!</a> 
+                  O si ya tienes una cuenta <a class="titles fs-5 modal-anchor text-decoration-none"> Inicia sesión</a></p> -->
+      </article>
+      <figure>
+        <img class="rounded shadow"
+          src="https://p0.pikist.com/photos/574/1015/beautiful-books-bookstore-casual-education-eyewear-knowledge-library-reading-side-view.jpg"
+          alt="mujer leyendo" height="400px">
+      </figure>
+    </section>
+
+    <!--  Books Section -->
+    <h2 class="titles fw-bold mt-5 mb-3 text-center"> Libros </h2>
+    <section id="container-books" class="d-flex flex-wrap justify-content-evenly gap-5 mb-5">
+      <!-- cards -->
+
+      <!-- User logged in -->
+      <article class="card bg-our-white mt-5">
+        <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal1">
+          <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+            class="card-img-top object-fit-contain pt-2" alt="Harry Potter" height="70%">
+          <div class="card-body py-0">
+            <h5 class="card-title mx-0  my-2 py-0 titles">Harry Potter (1997)</h5>
+            <p class="card-text d-flex justify-content-between m-0 titles"> J.k Rowling <span>
+                Planeta</span></p>
+            <p class="card-text d-flex justify-content-between m-0 titles"> Medellín <span> Venta
+                (precio)</span>
+            </p>
+          </div>
+        </div>
+        <!-- modal -->
+        <div class="modal fade" id="book-modal1" tabindex="-1" aria-labelledby="book-modal1" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered box-shadow-modal ">
+            <div class="modal-content bg-our-white">
+              <div class="modal-header d-flex justify-content-between ">
+                <h1 class="modal-title fs-5 titles fw-bolder" id="book-modal1">Harry Potter (1997)</h1>
+                <i class="bi bi-x-lg btn titles" data-bs-dismiss="modal" aria-label="Close"></i>
+              </div>
+              <div class="px-3 modal-body row">
+                <div class="col-6 d-flex flex-column justify-content-center">
+                  <h5 class="modal-title mb-2 titles fw-bolder"> Descripción: </h5>
+                  <p class="modal-text general-text"> Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Enim
+                    inventore omnis nobis repellat autem labore, nulla eius repudiandae blanditiis
+                    culpa recusandae impedit quia debitis molestias molestiae obcaecati earum,
+                    praesentium
+                    iusto.</p>
+                </div>
+                <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+                  class="object-fit-contain col-6" alt="Harry Potter">
+              </div>
+              <div class="px-3 modal-body row">
+                <div class="col-6">
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Autor: </span> J.K
+                    Rowling</p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Editorial: </span>
+                    Planeta</p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Localidad:
+                    </span> Medellín </p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Transacción:
+                    </span>
+                    Venta (45000)
+                  </p>
+                </div>
+                <!-- If the user is logged in -->
+                <div class="owner-info col-6">
+                  <p class="modal-text mb-4 general-text"> <span class="modal-title fw-bolder titles">Dueño:
+                    </span> Caro</p>
+                  <a href="https://wa.me/+573113506770/?text=Hola, deseo más información sobre tu libro:"
+                    target="_blank"
+                    class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
+                      class="bi bi-whatsapp green-wsp"></i> Chatea conmigo</a>
+                  <a href="mailto:caro@gmail.com?Subject=Interesado%20en%20el%20libro" target="_blank"
+                    class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
+                      class="bi bi-envelope text-primary "></i> Escríbeme un correo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- User not logged in -->
+      <article class="card bg-our-white mt-5">
+        <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal2">
+          <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+            class="card-img-top object-fit-contain pt-2" alt="Harry Potter" height="70%">
+          <div class="card-body py-0">
+            <h5 class="card-title mx-0  my-2 py-0 titles">Harry Potter (1997)</h5>
+            <p class="card-text d-flex justify-content-between m-0 titles"> J.k Rowling <span>
+                Planeta</span></p>
+            <p class="card-text d-flex justify-content-between m-0 titles"> Medellín <span> Venta
+                (precio)</span>
+            </p>
+          </div>
+        </div>
+        <!-- modal -->
+        <div class="modal fade" id="book-modal2" tabindex="-1" aria-labelledby="book-modal2" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered box-shadow-modal ">
+            <div class="modal-content bg-our-white">
+              <div class="modal-header d-flex justify-content-between ">
+                <h1 class="modal-title fs-5 titles fw-bolder" id="book-modal2">Harry Potter (1997)</h1>
+                <i class="bi bi-x-lg btn titles" data-bs-dismiss="modal" aria-label="Close"></i>
+              </div>
+              <div class="px-3 modal-body row">
+                <div class="col-6 d-flex flex-column justify-content-center">
+                  <h5 class="modal-title mb-2 titles fw-bolder"> Descripción: </h5>
+                  <p class="modal-text general-text"> Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Enim
+                    inventore omnis nobis repellat autem labore, nulla eius repudiandae blanditiis
+                    culpa recusandae impedit quia debitis molestias molestiae obcaecati earum,
+                    praesentium
+                    iusto.</p>
+                </div>
+                <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+                  class="object-fit-contain col-6" alt="Harry Potter">
+              </div>
+              <div class="px-3 modal-body row">
+                <div class="col-6">
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Autor: </span> J.K
+                    Rowling</p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Editorial: </span>
+                    Planeta</p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Localidad:
+                    </span> Medellín </p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Transacción:
+                    </span>
+                    Venta (45000)
+                  </p>
+                </div>
+                <!-- If the user is not logged in -->
+                <div class="owner-info col-6">
+                  <p class="modal-text mb-4 general-text"> Para ver la información de contacto, debes
+                    <a href="" class="titles modal-anchor text-decoration-none fw-bold">Iniciar sesión</a>
+                  </p>
+                  <p class="modal-text mb-4 general-text">¿No tienes una cuenta aún? <a href=""
+                      class="titles modal-anchor text-decoration-none fw-bold">Registrate</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- User logged owns the book -->
+      <article class="card bg-our-white mt-5">
+        <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal">
+          <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+            class="card-img-top object-fit-contain pt-2" alt="Harry Potter" height="70%">
+          <div class="card-body py-0">
+            <h5 class="card-title mx-0  my-2 py-0 titles">Harry Potter (1997)</h5>
+            <p class="card-text d-flex justify-content-between m-0 titles"> J.k Rowling <span>
+                Planeta</span></p>
+            <p class="card-text d-flex justify-content-between m-0 titles"> Medellín <span> Venta
+                (precio)</span>
+            </p>
+          </div>
+        </div>
+        <!--modal -->
+        <div class="modal fade" id="book-modal" tabindex="-1" aria-labelledby="book-modal" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered box-shadow-modal ">
+            <div class="modal-content bg-our-white">
+              <div class="modal-header d-flex justify-content-between ">
+                <h1 class="modal-title fs-5 titles fw-bolder" id="book-modal">Harry Potter (1997)</h1>
+                <i class="bi bi-x-lg btn titles" data-bs-dismiss="modal" aria-label="Close"></i>
+              </div>
+              <div class="px-3 modal-body row">
+                <div class="col-6 d-flex flex-column justify-content-center">
+                  <h5 class="modal-title mb-2 titles fw-bolder"> Descripción: </h5>
+                  <p class="modal-text general-text"> Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Enim
+                    inventore omnis nobis repellat autem labore, nulla eius repudiandae blanditiis
+                    culpa recusandae impedit quia debitis molestias molestiae obcaecati earum,
+                    praesentium
+                    iusto.</p>
+                </div>
+                <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg"
+                  class="object-fit-contain col-6" alt="Harry Potter">
+              </div>
+              <div class="px-3 modal-body row">
+                <div class="col-6">
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Autor: </span> J.K
+                    Rowling</p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Editorial: </span>
+                    Planeta</p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Localidad:
+                    </span> Medellín </p>
+                  <p class="modal-text mb-0 general-text"> <span class="modal-title fw-bolder titles">Transacción:
+                    </span>
+                    Venta (45000)
+                  </p>
+                </div>
+                <!-- If the user is the owner of the book -->
+                <div class="owner-info col-6 align-content-center btns-owner">
+                  <p class="modal-text mb-4 general-text text-center"> <span class="modal-title fw-bolder titles">Dueño:
+                    </span> Caro</p>
+                  <button class="btn btn-edit mx-2 titles fw-bold bg-our-white"><i class="bi bi-pencil-square"></i>
+                    Editar</button>
+                  <button class="btn btn-delete titles fw-bold bg-creamy"> <i
+                      class="bi bi-trash-fill"></i>Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
     <section id="registration-section">
       <article id="form-container" class="container">
         <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
           <div class="col-md-12 text-center">
             <h3 class="form-title fw-bold titles fw-bold ">Crea tu cuenta</h3>
-            <p class="form-description fw-medium general text fw-semibold">Ingresa los siguientes datos para
-              crear tu
-              cuenta
+            <p class="form-description fw-medium general text fw-semibold">Ingresa los siguientes datos para crear
+              tu cuenta
             </p>
           </div>
           <div class="col-md-6">
@@ -123,7 +348,7 @@
             <button type="submit" class="btn px-5 py-3 fw-semibold send-btn">Enviar</button>
           </div>
           <div class="col-md-12 text-center mb-3 ">
-            <p class="form-terms general-text fw-semibold">Al enviar tus datos aceptas nuestros 
+            <p class="form-terms general-text fw-semibold">Al enviar tus datos aceptas nuestros
               <a target="_blank" href="./public/documents/Términos y Condiciones de Uso.pdf"
                 class="fw-bold terms">términos y condiciones</a>.
             </p>
@@ -136,10 +361,8 @@
     <!-- footer -->
     <nav class="bottom align-items-center">
       <ul class="bottom__media">
-        <li><a href="https://www.facebook.com/" target="_blank"> <i
-              class="icons-bisa bi-facebook"></i></a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank"> <i
-              class="icons-bisa bi-linkedin"></i></a></li>
+        <li><a href="https://www.facebook.com/" target="_blank"> <i class="icons-bisa bi-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank"> <i class="icons-bisa bi-linkedin"></i></a></li>
         <li><a href="https://www.youtube.com/" target="_blank"> <i class="icons-bisa bi-youtube"></i></a>
         </li>
         <li><a href="https://www.instagram.com/" target="_blank"> <i class="icons-bisa bi-instagram"></i></a>
@@ -159,7 +382,7 @@
         </ul>
       </div>
       <div class="bottom__image">
-        <a href="/"> <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500">  </a>
+        <a href="/"> <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="500"> </a>
         <p>MikeBooks</p>
       </div>
     </nav>
