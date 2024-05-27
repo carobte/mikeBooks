@@ -11,6 +11,10 @@
 $tooltip-bg: var(--lighter);
 $tooltip-color: var(--dark-brown);
 
+.row {
+    --bs-gutter-x: 0 ;
+ }
+ 
 /* Imports font and icons */
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap');
