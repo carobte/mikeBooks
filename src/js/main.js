@@ -202,5 +202,5 @@ async function indexBooks(container) {
 indexBooks(containerBooks)
 
 function saveOwner(user) {
-  localStorage.setItem("owner", user) 
+  localStorage.setItem("owner", JSON.stringify(user)) 
 }
