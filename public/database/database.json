@@ -1,0 +1,136 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "nickname": "caro",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
+            "location": "medellín",
+            "password": "123",
+            "number": "31152121",
+            "email": "caro@email.com",
+            "suscription": "premium",
+            "books": [
+                {
+                    "id": "1",
+                    "name": "harry potter",
+                    "year": "1997",
+                    "author": "j.k rowling",
+                    "publisher": "planeta",
+                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "image": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124498015_73wjf7xmztd3bjdi.jpg",
+                    "transaction": "sell",
+                    "price": "45000"
+                }
+            ],
+            "reviews": [
+                {
+                    "id": "10",
+                    "msg": "Me fue bien"
+                },
+                {
+                    "id": "15",
+                    "msg": "Libro en buen estado"
+                }
+            ]
+        },
+        {
+            "id": "2",  
+            "nickname": "ana",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
+            "location": "medellín",
+            "password": "213",
+            "number": "31253141",
+            "email": "ana@email.com",
+            "suscription": "premium",
+            "books": [
+                {
+                    "id": "2",
+                    "name": "maría",
+                    "year": "1867",
+                    "author": "jorge isaacs",
+                    "publisher": "self-published",
+                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "image": "https://www.planetalector.com.co/usuaris/thumbnails/libros/fotos/312/360/portada_maria-novela-grafica_jorge-isaacs_202001231803.jpg",
+                    "transaction": "sell",
+                    "price": "40000"
+                }
+            ],
+            "reviews": [
+                {
+                    "id": "11",
+                    "msg": "Me fue bien"
+                },
+                {
+                    "id": "13",
+                    "msg": "Libro en buen estado"
+                }
+            ]
+        },
+        {
+            "id": "3",  
+            "nickname": "marlon",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
+            "location": "medellín",
+            "password": "321",
+            "number": "31374123",
+            "email": "marlon@email.com",
+            "suscription": "premium",
+            "books": [
+                {
+                    "id": "3",
+                    "name": "el gran gatsby",
+                    "year": "1925",
+                    "author": "f. scott fitzgerald",
+                    "publisher": "charles scribner",
+                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "image": "https://libreriamorelos.mx/images/assets/portadas/9786077365846.jpg",
+                    "transaction": "sell",
+                    "price": "50000"
+                }
+            ],
+            "reviews": [
+                {
+                    "id": "15",
+                    "msg": "Me fue bien"
+                },
+                {
+                    "id": "19",
+                    "msg": "Libro en buen estado"
+                }
+            ]
+        },
+        {
+            "id": "4",  
+            "nickname": "edwin",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
+            "location": "medellín",
+            "password": "537",
+            "number": "31374123",
+            "email": "edwin@email.com",
+            "suscription": "premium",
+            "books": [
+                {
+                    "id": "4",
+                    "name": "cien años de soledad",
+                    "year": "1967",
+                    "author": "gabriel garcía árquez",
+                    "publisher": "editorial sudamericana",
+                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "image": "https://hispamer.com.ni/wp-content/uploads/2023/01/9786070728792.jpg",
+                    "transaction": "sell",
+                    "price": "55000"
+                }
+            ],
+            "reviews": [
+                {
+                    "id": "17",
+                    "msg": "Me fue bien"
+                },
+                {
+                    "id": "18",
+                    "msg": "Libro en buen estado"
+                }
+            ]
+        }
+    ]
+}
