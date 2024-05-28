@@ -4,11 +4,11 @@
             "id": "1",
             "nickname": "caro",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
-            "location": "medellín",
+            "location": "medellin",
             "password": "123",
             "number": "31152121",
             "email": "caro@email.com",
-            "suscription": "premium",
+            "subscription": "premium",
             "books": [
                 {
                     "id": "1",
@@ -41,7 +41,7 @@
             "password": "213",
             "number": "31253141",
             "email": "ana@email.com",
-            "suscription": "premium",
+            "subscription": "premium",
             "books": [
                 {
                     "id": "2",
@@ -74,7 +74,7 @@
             "password": "321",
             "number": "31374123",
             "email": "marlon@email.com",
-            "suscription": "premium",
+            "subscription": "premium",
             "books": [
                 {
                     "id": "3",
@@ -107,7 +107,7 @@
             "password": "537",
             "number": "31374123",
             "email": "edwin@email.com",
-            "suscription": "premium",
+            "subscription": "premium",
             "books": [
                 {
                     "id": "4",

@@ -73,7 +73,7 @@ div > .file-input {
     color: var(--darkest-brown)
 }
 
-.terms:hover {
+.terms, .our-email:hover {
     color: var(--darkest-brown);
     font-weight: 900;
     text-shadow: 0 0.25rem 0.5rem rgba(100, 63, 56, 0.5);

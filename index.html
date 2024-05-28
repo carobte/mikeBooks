@@ -284,7 +284,7 @@
 
     </section>
 
-    <section id="login-section" class="d-flex mt-5 pt-3 justify-content-center align-items-center flex-wrap ">
+    <section id="login-section" class="d-flex mt-5 pt-5 justify-content-center align-items-center flex-wrap ">
       <article id="safety-recommendations"
         class="col-lg-7 col-10 col-xl-7 d-flex align-items-center flex-column mb-md-5 mb-xs-5 pt-5">
         <h2 class="titles fw-bold">Recomendaciones</h2>
@@ -306,14 +306,14 @@
             innecesaria, como tu cédula o dirección residencial.</li>
           <li class="col-11">Confía en tu instinto: Si en algún momento te sientes incómodo o algo no parece estar bien,
             no dudes en cancelar la reunión o la transacción. Tu seguridad es lo más importante.</li>
-          <li class="col-11">Si experimentas algún comportamiento sospechoso, repórtalo a MikeBooks al correo <a href=""
-              class="titles fw-bold">mikebooks@gmail.com</a>para que podamos tomar las medidas necesarias.</li>
+          <li class="col-11">Si experimentas algún comportamiento sospechoso, repórtalo a MikeBooks al correo <a href="mailto:mikebooks@gmail.com"
+              class="titles fw-bold our-email">mikebooks@gmail.com</a> para que podamos tomar las medidas necesarias.</li>
         </ul>
         <p class="general-text col-11">Siguiendo estas recomendaciones, podrás disfrutar de una experiencia segura y
           agradable al
           utilizar MikeBooks para intercambiar o vender libros. ¡Gracias por ser parte de nuestra comunidad!</p>
       </article>
-      <article id="login-form-container" class="d-flex col-lg-5 col-xl-5 col-8 h-100 pt-xs-5 align-items-center pe-lg-4 pe-xl-5">
+      <article id="login-form-container" class="d-flex col-lg-5 col-xl-4 col-8 h-100 pt-xs-5 align-items-center pe-lg-4 pe-xl-5">
         <form id="login-form"
           class="w-100 bg-lighter needs-validation d-flex flex-column align-items-center py-5 px-xs-3 login-form" novalidate
           autocomplete="off">
@@ -350,7 +350,7 @@
         <img src="https://images.pexels.com/photos/6550405/pexels-photo-6550405.jpeg" alt="Persona leyendo" class="col-8 col-lg-10 col-xxl-8 col-md-6 section-imgs">
       </figure>
       <article id="form-container" class="col-lg-7 col-sm-12 col-md-12 d-flex justify-content-center mt-5 p-1 ps-3">
-        <form id="registration" class="row g-5 w-100 bg-our-white needs-validation" novalidate autocomplete="off">
+        <form id="registration-form" class="row g-5 w-100 bg-our-white needs-validation me-5" novalidate autocomplete="off">
           <div class="col-md-12 text-center">
             <h3 class="form-title fw-bold titles fw-bold ">Crea tu cuenta</h3>
             <p class="form-description fw-medium general text fw-semibold">Ingresa los siguientes datos para crear
@@ -388,8 +388,8 @@
             <span class="invalid-feedback">Ingresa tu correo electrónico.</span>
           </div>
           <div class="col-md-6">
-            <label for="phone" class="form-label titles fw-semibold">Número de teléfono</label>
-            <input type="tel" class="form-control our-input bg-our-white" id="phone" placeholder="XXX XXXX XXX"
+            <label for="number" class="form-label titles fw-semibold">Número de teléfono</label>
+            <input type="tel" class="form-control our-input bg-our-white" id="number" placeholder="3216549870"
               required>
             <span class="invalid-feedback">Ingresa tu número de teléfono.</span>
           </div>
@@ -406,18 +406,18 @@
             <span class="invalid-feedback">Confirma tu contraseña.</span>
           </div>
           <div class=" col-12">
-            <label for="profile-picture" class="form-label titles fw-semibold">Foto de perfil</label>
-            <input type="file" class="form-control our-input bg-our-white file-input" id="profile-picture" required>
+            <label for="image" class="form-label titles fw-semibold">Foto de perfil</label>
+            <input type="file" class="form-control our-input bg-our-white file-input" id="image" required>
             <span class="invalid-feedback">Agrega una foto de perfil.</span>
           </div>
-          <div class="col-12 d-flex justify-content-around">
-            <input type="radio" class="btn btn-check " name="options-base" id="standard" autocomplete="off" checked>
+          <div id="radio-input" class="col-12 d-flex justify-content-around">
+            <input type="radio" class="btn btn-check " name="options-base" id="standard" autocomplete="off" value="free">
             <label class="btn py-4 my-label-check titles fw-bold" for="standard" data-bs-toggle="tooltip"
               data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Intercambia o vende tu libro.">Plan standard
+              data-bs-title="Intercambia o vende tu libro.">Plan estándar
               <p class="price">$0</p>
             </label>
-            <input type="radio" class="btn btn-check" name="options-base" id="premium" autocomplete="off">
+            <input type="radio" class="btn btn-check" name="options-base" id="premium" autocomplete="off" value="premium">
             <label class="btn py-4 my-label-check titles fw-bold" for="premium" data-bs-toggle="tooltip"
               data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
               data-bs-title="Intercambios y ventas ilimitadas.">Plan premium
@@ -469,7 +469,6 @@
   </footer>
   <script type="module" src="./src/js/api.js"></script>
   <script type="module" src="./src/js/main.js"></script>
-  <script type="module" src="./src/js/login.js"></script>
 </body>
 
 </html>
