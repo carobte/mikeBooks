@@ -24,7 +24,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg mb-4 navigation__container">
+        <nav class="navbar navbar-expand-lg mb-4 navigation__container py-0 position-fixed top-0 w-100">
           <div class="container-fluid">
             <a class="navbar-brand navigation__image" href="/">
               <img src="/public/icons/MikeBooks_icon.ico" alt="logo" width="100" />
@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="btn" href="#">Libros</a>
+                  <a class="btn" href="../../index.html#container-books">Libros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="btn" aria-current="page" href="#">Registrate</a>
+                  <a class="btn" aria-current="page" href="../../index.html#registration-section">Regístrate</a>
                 </li>
                 <li class="nav-item">
-                  <a class="btn" href="#">Iniciar seccion</a>
+                  <a class="btn" href="../../index.html#login-section">Iniciar sesión</a>
                 </li>
                 <li class="nav-item dropdown">
                   <button class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +50,7 @@
                   </button>
                   <ul class="dropdown-menu ">
                     <li><a class="dropdown-item" href="./src/pages/myProfile.html">Mi perfil</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrar seccion</a></li>
+                    <li><a class="dropdown-item" href="/">Cerrar sesión</a></li>
                   </ul>
                 </li>
               </ul>
@@ -59,7 +59,7 @@
         </nav>
       </header>
 
-    <main>
+    <main class="bg-our-white main">
         <!-- profile container -->
         <section class="container">
             <article class="row justify-content-lg-between">

@@ -24,9 +24,9 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg mb-4 navigation__container">
+    <nav class="navbar navbar-expand-lg navigation__container py-0 position-fixed top-0 w-100 ">
       <div class="container-fluid">
-        <a class="navbar-brand navigation__image" href="#">
+        <a class="navbar-brand navigation__image" href="/">
           <img src="./public/icons/MikeBooks_icon.ico" alt="logo" width="100" />
           <p>MikeBooks</p>
         </a>
@@ -36,21 +36,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="btn" href="#">Libros</a>
+              <a class="btn" href="#container-books">Libros</a>
             </li>
             <li class="nav-item">
-              <a class="btn" aria-current="page" href="#">Registrate</a>
+              <a class="btn" aria-current="page" href="#registration-section">Regístrate</a>
             </li>
             <li class="nav-item">
-              <a class="btn" href="#">Iniciar seccion</a>
-            </li>
+              <a class="btn" href="#login-section">Iniciar sesión</a>
+            </li> 
             <li class="nav-item dropdown">
               <button class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Perfil
               </button>
               <ul class="dropdown-menu ">
                 <li><a class="dropdown-item" href="./src/pages/myProfile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="#">Cerrar seccion</a></li>
+                <li><a class="dropdown-item" href="/">Cerrar sesión</a></li>
               </ul>
             </li>
           </ul>
@@ -58,7 +58,7 @@
       </div>
     </nav>
   </header>
-  <main class="bg-our-white">
+  <main class="bg-our-white main">
     <!-- About us section -->
     <section class="d-flex flex-wrap justify-content-evenly align-items-center">
       <article id="about-us">
@@ -139,6 +139,7 @@
                 </div>
                 <!-- If the user is logged in -->
                 <div class="owner-info col-6">
+                  <a  href="./src/pages/profileOwner.html" class="text-decoration-none">
                   <p class="modal-text mb-4 general-text"> <span class="modal-title fw-bolder titles">Dueño:
                     </span> Caro</p>
                   <a href="https://wa.me/+573113506770/?text=Hola, deseo más información sobre tu libro:"
@@ -148,6 +149,7 @@
                   <a href="mailto:caro@gmail.com?Subject=Interesado%20en%20el%20libro" target="_blank"
                     class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
                       class="bi bi-envelope text-primary "></i> Escríbeme un correo</a>
+                    </a>
                 </div>
               </div>
             </div>

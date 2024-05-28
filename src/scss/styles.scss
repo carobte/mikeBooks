@@ -64,6 +64,10 @@ body{
 
 /* Home styles */
 
+.main{
+    padding-top: 120px;
+}
+
 /* About us section */
 
 #about-us{
@@ -75,6 +79,7 @@ body{
 #container-books{
     width: 90%;
     margin: auto;
+    scroll-margin-top: 200px;
 }
 
 /* Cards styles*/ 
