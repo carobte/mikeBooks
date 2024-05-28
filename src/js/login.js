@@ -5,7 +5,8 @@ const usernameLogin = document.querySelector('#username-login')
 // Get password from index.html
 const passwordLogin = document.querySelector('#password-login')
 // Create a const for the API
-const API = "http://localhost:3000/users"
+
+import { getUsers, validateUsername } from "./api.js"
 
 loginForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -15,25 +16,16 @@ loginForm.addEventListener('submit', async (event) => {
     } else {
         if (user.password === passwordLogin.value.toLowerCase()) {
             alert("Has iniciado sesión") 
-            localStorage.setItem("userOnline",JSON.stringify(user))   
+            localStorage.setItem("userLogged",JSON.stringify(user))   
         } else {
             alert("Contraseña incorrecta")
         }
     }
+    loginForm.reset()
 })
 
 
-async function validateUsername(usernameLogin) {
-    const response = await fetch(`${API}?nickname=${usernameLogin}`)
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
-    if (data.length === 1) {
-        return data[0]
-    } else {
-        return false
-    }
-}
+
 
 console.log(loginForm)
 console.log(passwordLogin)
