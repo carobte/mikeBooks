@@ -52,7 +52,7 @@
               </button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="/">Cerrar sesión</a></li>
+                <li id="log-out" class="dropdown-item">Cerrar sesión</li>
               </ul>
             </li>
           </ul>
@@ -70,7 +70,7 @@
           <article class="row gap-4 p-4 justify-content-between align-items-center">
             <div
               class="col-sm-4 d-flex justify-content-center align-items-center rounded-1 p-2 py-md-5 px-md-3 h-100 container-icon-user">
-              <img class="col-6 col-md-8 col-xl-12" src="/public/icons/user-avatar.png" alt="icon-user">
+              <img class="col-6 col-md-8 col-xl-12"  alt="icon-user">
             </div>
             <div class="col-sm-6 d-flex flex-column gap-4 general-text">
               <h3 class="titles mb-1">Nombre del usuario</h3>
@@ -92,7 +92,7 @@
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
           <article class="row gap-4 p-4">
             <h3 class="titles">Comentarios</h3>
-            <div class="d-flex flex-column gap-3 general-text">
+            <div id="comment-container" class="d-flex flex-column gap-3 general-text">
               <div class="p-3 rounded-1 bg-creamy comment-box">Comentario 1</div>
               <div class="p-3 rounded-1 bg-creamy comment-box">Comentario 2</div>
             </div>
@@ -101,7 +101,7 @@
         </article>
     </section>
 
-    <section id="user-books" class="container">
+    <section id="user-books" class="d-flex flex-wrap justify-content-evenly align-items-center">
 
     </section>
 
