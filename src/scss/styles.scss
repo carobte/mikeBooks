@@ -130,6 +130,13 @@ body{
     background-color: var(--cream-color);
 }
 
+// ul reset predefined styles
+
+.list-group {
+    --bs-list-group-bg: var(--white);
+    --bs-list-group-color: var(--darkest-brown);
+}
+
 /* Responsive */
 
 @media (max-width: 509px) {
