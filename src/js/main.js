@@ -36,7 +36,7 @@ radioInput.addEventListener('click', function (event) {
 // add submit event listener to login form
 loginForm.addEventListener('submit', async (event) => {
     event.preventDefault()
-    const user = await validateUsername(usernameLogin.value.toLowerCase())
+    const user = await validateUsername(usernameLogin.value)
     if (!user) {
         alert("Usuario incorrecto o no estás registrado")
     } else {
