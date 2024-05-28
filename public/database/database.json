@@ -11,15 +11,37 @@
             "subscription": "premium",
             "books": [
                 {
-                    "id": "dasda",
-                    "name": "harry potter",
+                    "id": "A1B2C3",
+                    "name": "Harry Potter y la piedra filosofal",
                     "year": "1997",
-                    "author": "j.k rowling",
-                    "publisher": "planeta",
-                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "author": "J.K. Rowling",
+                    "publisher": "Planeta",
+                    "description": "Un niño descubre que es un mago y asiste a una escuela mágica.",
                     "image": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124498015_73wjf7xmztd3bjdi.jpg",
                     "transaction": "venta",
                     "price": "45000"
+                },
+                {
+                    "id": "V4W5X6",
+                    "name": "Crimen y castigo",
+                    "year": "1866",
+                    "author": "Fiódor Dostoyevski",
+                    "publisher": "The Russian Messenger",
+                    "description": "La historia de un hombre que lucha con la culpa después de cometer un asesinato.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/91eCBYvdFBL.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
+                },
+                {
+                    "id": "Y1Z2A3",
+                    "name": "La sombra del viento",
+                    "year": "2001",
+                    "author": "Carlos Ruiz Zafón",
+                    "publisher": "Planeta",
+                    "description": "Un joven descubre un libro maldito que cambia su vida para siempre.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/81eB+7+CkUL.jpg",
+                    "transaction": "venta",
+                    "price": "40000"
                 }
             ],
             "reviews": [
@@ -34,7 +56,7 @@
             ]
         },
         {
-            "id": "2",  
+            "id": "2",
             "nickname": "ana",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
             "location": "medellín",
@@ -53,6 +75,28 @@
                     "image": "https://www.planetalector.com.co/usuaris/thumbnails/libros/fotos/312/360/portada_maria-novela-grafica_jorge-isaacs_202001231803.jpg",
                     "transaction": "venta",
                     "price": "40000"
+                },
+                {
+                    "id": "S1T2U3",
+                    "name": "El principito",
+                    "year": "1943",
+                    "author": "Antoine de Saint-Exupéry",
+                    "publisher": "Reynal & Hitchcock",
+                    "description": "Un aviador se encuentra con un joven príncipe de otro planeta.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg",
+                    "transaction": "venta",
+                    "price": "30000"
+                },
+                {
+                    "id": "B4C5D6",
+                    "name": "Orgullo y prejuicio",
+                    "year": "1813",
+                    "author": "Jane Austen",
+                    "publisher": "T. Egerton",
+                    "description": "Una novela sobre el amor y las diferencias sociales en la Inglaterra del siglo XIX.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/91HHqVTAJQL.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
                 }
             ],
             "reviews": [
@@ -67,7 +111,7 @@
             ]
         },
         {
-            "id": "3",  
+            "id": "3",
             "nickname": "marlon",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
             "location": "medellín",
@@ -86,6 +130,28 @@
                     "image": "https://libreriamorelos.mx/images/assets/portadas/9786077365846.jpg",
                     "transaction": "venta",
                     "price": "50000"
+                },
+                {
+                    "id": "J1K2L3",
+                    "name": "1984",
+                    "year": "1949",
+                    "author": "George Orwell",
+                    "publisher": "Secker & Warburg",
+                    "description": "Una novela distópica sobre un régimen totalitario.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/81gTwYAhU7L.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
+                },
+                {
+                    "id": "E7F8G9",
+                    "name": "Los pilares de la Tierra",
+                    "year": "1989",
+                    "author": "Ken Follett",
+                    "publisher": "Penguin Random House",
+                    "description": "La historia épica de la construcción de una catedral en la Edad Media.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/91j8k9gZZ4L.jpg",
+                    "transaction": "venta",
+                    "price": "65000"
                 }
             ],
             "reviews": [
@@ -100,7 +166,7 @@
             ]
         },
         {
-            "id": "4",  
+            "id": "4",
             "nickname": "edwin",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
             "location": "medellín",
@@ -119,6 +185,28 @@
                     "image": "https://hispamer.com.ni/wp-content/uploads/2023/01/9786070728792.jpg",
                     "transaction": "venta",
                     "price": "55000"
+                },
+                {
+                    "id": "D4E5F6",
+                    "name": "El señor de los anillos: La comunidad del anillo",
+                    "year": "1954",
+                    "author": "J.R.R. Tolkien",
+                    "publisher": "Minotauro",
+                    "description": "Un hobbit emprende un viaje para destruir un anillo poderoso.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/81t2CVWEsUL.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
+                },
+                {
+                    "id": "H1I2J3",
+                    "name": "El gran Gatsby",
+                    "year": "1925",
+                    "author": "F. Scott Fitzgerald",
+                    "publisher": "Scribner",
+                    "description": "Un millonario misterioso y su obsesión con una mujer casada en los años 20.",
+                    "image": "https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
                 }
             ],
             "reviews": [
