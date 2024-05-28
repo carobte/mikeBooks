@@ -314,21 +314,21 @@
           utilizar MikeBooks para intercambiar o vender libros. ¡Gracias por ser parte de nuestra comunidad!</p>
       </article>
       <article id="login-form-container" class="d-flex col-lg-5 col-xl-5 col-8 h-100 pt-xs-5 align-items-center pe-lg-4 pe-xl-5">
-        <form id="registration"
+        <form id="login-form"
           class="w-100 bg-lighter needs-validation d-flex flex-column align-items-center py-5 px-xs-3 login-form" novalidate
           autocomplete="off">
           <div class="col-12 text-center mt-0 mb-3">
             <h3 class="form-title fw-bold titles fw-bold ">Inicio sesión</h3>
           </div>
           <div class="col-10 mb-3">
-            <label for="username" class="form-label titles fw-semibold">Nombre de usuario</label>
-            <input type="text" class="form-control our-input bg-our-white" id="username" placeholder="MikeBooks01"
+            <label for="username-login" class="form-label titles fw-semibold">Nombre de usuario</label>
+            <input type="text" class="form-control our-input bg-our-white" id="username-login" placeholder="MikeBooks01"
               required>
             <span class="invalid-feedback">Ingresa un nombre de usuario.</span>
           </div>
           <div class="col-10 mb-3">
-            <label for="password" class="form-label titles fw-semibold">Contraseña</label>
-            <input type="password" class="form-control our-input bg-our-white" id="password" placeholder="***********"
+            <label for="password-login" class="form-label titles fw-semibold">Contraseña</label>
+            <input type="password" class="form-control our-input bg-our-white" id="password-login" placeholder="***********"
               required>
             <span class="invalid-feedback">Ingresa una contraseña.</span>
           </div>
@@ -368,11 +368,15 @@
             <input class="form-control our-input bg-our-white" list="datalistOptions" id="localidad"
               placeholder="Escribe tu localidad..." required>
             <datalist id="datalistOptions">
-              <option value="Medellin">Medellin</option>
-              <option value="Envigado">Envigado</option>
-              <option value="Copacabana">Copacabana</option>
+              <option value="Barbosa">Barbosa</option>
               <option value="Bello">Bello</option>
+              <option value="Caldas">Caldas</option>
+              <option value="Copacabana">Copacabana</option>
+              <option value="Envigado">Envigado</option>
+              <option value="Estrella">Estrella</option>
+              <option value="Girardota">Girardota</option>
               <option value="Itagui">Itagui</option>
+              <option value="Medellin">Medellin</option>
               <option value="Sabaneta">Sabaneta</option>
             </datalist>
             <span class="invalid-feedback">Ingresa tu localidad.</span>
@@ -409,13 +413,13 @@
           <div class="col-12 d-flex justify-content-around">
             <input type="radio" class="btn btn-check " name="options-base" id="standard" autocomplete="off" checked>
             <label class="btn py-4 my-label-check titles fw-bold" for="standard" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+              data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
               data-bs-title="Intercambia o vende tu libro.">Plan standard
               <p class="price">$0</p>
             </label>
             <input type="radio" class="btn btn-check" name="options-base" id="premium" autocomplete="off">
             <label class="btn py-4 my-label-check titles fw-bold" for="premium" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+              data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
               data-bs-title="Intercambios y ventas ilimitadas.">Plan premium
               <p class="price mb-0">$50.000</p>
             </label>
@@ -464,6 +468,7 @@
     </nav>
   </footer>
   <script type="module" src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/login.js"></script>
 </body>
 
 </html>
