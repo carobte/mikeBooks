@@ -16,7 +16,7 @@ export async function getUsers() {
 
 // Function to get one specific user
 export async function getUserID(userID) {
-    const response = await fetch(`${API}/${id}`)
+    const response = await fetch(`${API}/${userID}`)
     const data = await response.json()
     console.log(data)
     return data  
@@ -54,3 +54,15 @@ export async function validateUsername(usernameLogin) {
     }
 }
 
+// Function to create books
+
+/* async function createBook(userID, book) { 
+    await fetch(`${API}/${userID}/books`, { // Error 404
+        method: "PUT",
+        body: JSON.stringify(book), 
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }) 
+}
+ */
