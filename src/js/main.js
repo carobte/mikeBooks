@@ -21,7 +21,6 @@ const number = document.querySelector('#number')
 const password = document.querySelector('#password')
 const confirmPassword = document.querySelector('#confirm-password')
 const image = document.querySelector('#image')
-const API = "http://localhost:3000/users"
 const radioInput = document.querySelector('#radio-input')
 let subscription
 
@@ -173,21 +172,17 @@ async function indexBooks(container) {
           if(userLogged.id === user.id){
             ownerInfo.classList.add("align-content-center", "btns-owner")
             ownerInfo.innerHTML = `
-            <p class="modal-text mb-4 general-text text-center"> <span class="modal-title fw-bolder titles"> Eres el dueño de este libro:
-            </span></p>
+            <p class="modal-text mb-4 general-text text-center"> <span class="modal-title fw-bolder titles text-capitalize"> ${user.nickname}</span>, eres el dueño de este libro
+            </p>
           <button class="btn btn-edit mx-2 titles fw-bold bg-our-white"><i class="bi bi-pencil-square"></i>
             Editar</button>
           <button class="btn btn-delete titles fw-bold bg-creamy"> <i
               class="bi bi-trash-fill"></i>Eliminar</button>`
           } else {
-            
-          }
-      }
-
-
-/*       ownerInfo.innerHTML = `
+            // User logged in and different of the owner
+            ownerInfo.innerHTML = `
             <a  href=${user.image} class="text-decoration-none">
-                <p class="modal-text mb-4 general-text"> <span class="modal-title fw-bolder titles text-capitalize">Dueño:
+                <p class="modal-text mb-4 general-text text-capitalize"> <span class="modal-title fw-bolder titles ">Dueño:
                 </span> ${user.nickname}</p>
                 <a href="https://wa.me/+57${user.number}/?text=Hola, deseo más información sobre tu libro: ${book.name}"
                 target="_blank"
@@ -196,7 +191,9 @@ async function indexBooks(container) {
                 <a href="mailto:${user.email}?Subject=Interesado%20en%20el%20libro%20${book.name}" target="_blank"
                 class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
                     class="bi bi-envelope text-primary "></i> Escríbeme un correo</a>
-            </a>` */
+            </a>`
+          }
+      }
     })
   })
 }
