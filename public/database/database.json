@@ -11,14 +11,14 @@
             "subscription": "premium",
             "books": [
                 {
-                    "id": "1",
+                    "id": "dasda",
                     "name": "harry potter",
                     "year": "1997",
                     "author": "j.k rowling",
                     "publisher": "planeta",
                     "description": "lorem ipsum dolor sit amet, consectetur",
                     "image": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124498015_73wjf7xmztd3bjdi.jpg",
-                    "transaction": "sell",
+                    "transaction": "venta",
                     "price": "45000"
                 }
             ],
@@ -44,14 +44,14 @@
             "subscription": "premium",
             "books": [
                 {
-                    "id": "2",
+                    "id": "dans3",
                     "name": "maría",
                     "year": "1867",
                     "author": "jorge isaacs",
                     "publisher": "self-published",
                     "description": "lorem ipsum dolor sit amet, consectetur",
                     "image": "https://www.planetalector.com.co/usuaris/thumbnails/libros/fotos/312/360/portada_maria-novela-grafica_jorge-isaacs_202001231803.jpg",
-                    "transaction": "sell",
+                    "transaction": "venta",
                     "price": "40000"
                 }
             ],
@@ -77,14 +77,14 @@
             "subscription": "premium",
             "books": [
                 {
-                    "id": "3",
+                    "id": "shfsdj",
                     "name": "el gran gatsby",
                     "year": "1925",
                     "author": "f. scott fitzgerald",
                     "publisher": "charles scribner",
                     "description": "lorem ipsum dolor sit amet, consectetur",
                     "image": "https://libreriamorelos.mx/images/assets/portadas/9786077365846.jpg",
-                    "transaction": "sell",
+                    "transaction": "venta",
                     "price": "50000"
                 }
             ],
@@ -110,14 +110,14 @@
             "subscription": "premium",
             "books": [
                 {
-                    "id": "4",
+                    "id": "urtyr",
                     "name": "cien años de soledad",
                     "year": "1967",
                     "author": "gabriel garcía árquez",
                     "publisher": "editorial sudamericana",
                     "description": "lorem ipsum dolor sit amet, consectetur",
                     "image": "https://hispamer.com.ni/wp-content/uploads/2023/01/9786070728792.jpg",
-                    "transaction": "sell",
+                    "transaction": "venta",
                     "price": "55000"
                 }
             ],
