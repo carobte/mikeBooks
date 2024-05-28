@@ -111,7 +111,7 @@ async function indexBooks(container) {
             <h5 class="card-title mx-0  my-2 py-0 titles text-capitalize">${book.name} (${book.year})</h5>
             <p class="card-text d-flex justify-content-between m-0 titles text-capitalize"> ${book.author}</p>
             <p class="card-text d-flex justify-content-between m-0 titles text-capitalize"> ${user.location} <span class="ms-5"> ${book.transaction}
-                (${book.price})</span>
+                $${book.price}</span>
             </p>
           </div>
         </div>
@@ -141,7 +141,7 @@ async function indexBooks(container) {
                   <p class="modal-text mb-0 general-text text-capitalize"> <span class="modal-title fw-bolder titles">Transacción:
                     </span>
                     ${book.transaction}
-                    (${book.price})
+                    $${book.price}
                   </p>
                 </div>
                 <!-- Conditional information -->
