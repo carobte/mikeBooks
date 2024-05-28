@@ -9,12 +9,13 @@ const API = "http://localhost:3000/users"
 
 loginForm.addEventListener('submit', async (event) => {
     event.preventDefault()
-    const user = await validateUsername(usernameLogin.value)
+    const user = await validateUsername(usernameLogin.value.toLowerCase())
     if (!user) {
         alert("Usuario incorrecto o no estás registrado")
     } else {
-        if (user.password === passwordLogin.value) {
-            alert("Has iniciado sesión")    
+        if (user.password === passwordLogin.value.toLowerCase()) {
+            alert("Has iniciado sesión") 
+            localStorage.setItem("userOnline",JSON.stringify(user))   
         } else {
             alert("Contraseña incorrecta")
         }
