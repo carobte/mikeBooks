@@ -181,7 +181,7 @@ async function indexBooks(container) {
           } else {
             // User logged in and different of the owner
             ownerInfo.innerHTML = `
-            <a  href=${user.image} class="text-decoration-none">
+            <a href="./src/pages/profileOwner.html" class="text-decoration-none" onclick="saveOwner(${user})">
                 <p class="modal-text mb-4 general-text text-capitalize"> <span class="modal-title fw-bolder titles ">Dueño:
                 </span> ${user.nickname}</p>
                 <a href="https://wa.me/+57${user.number}/?text=Hola, deseo más información sobre tu libro: ${book.name}"
@@ -200,3 +200,7 @@ async function indexBooks(container) {
 
 
 indexBooks(containerBooks)
+
+function saveOwner(user) {
+  localStorage.setItem("owner", user) 
+}
