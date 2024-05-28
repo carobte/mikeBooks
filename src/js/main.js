@@ -34,12 +34,12 @@ radioInput.addEventListener('click', function (event) {
 
 // add submit event listener to login form
 loginForm.addEventListener('submit', async (event) => {
-  event.preventDefault()
-  const user = await validateUsername(usernameLogin.value.toLowerCase())
-  if (!user) {
-    alert("Usuario incorrecto o no estás registrado")
-  } else {
-    if (user.password === passwordLogin.value.toLowerCase()) {
+    event.preventDefault()
+    const user = await validateUsername(usernameLogin.value)
+    if (!user) {
+        alert("Usuario incorrecto o no estás registrado")
+    } else {
+      if (user.password === passwordLogin.value.toLowerCase()) {
       alert("Has iniciado sesión")
       localStorage.setItem("userLogged", JSON.stringify(user))
     } else {
@@ -111,7 +111,7 @@ async function indexBooks(container) {
             <h5 class="card-title mx-0  my-2 py-0 titles text-capitalize">${book.name} (${book.year})</h5>
             <p class="card-text d-flex justify-content-between m-0 titles text-capitalize"> ${book.author}</p>
             <p class="card-text d-flex justify-content-between m-0 titles text-capitalize"> ${user.location} <span class="ms-5"> ${book.transaction}
-                (${book.price})</span>
+                $${book.price}</span>
             </p>
           </div>
         </div>
@@ -141,7 +141,7 @@ async function indexBooks(container) {
                   <p class="modal-text mb-0 general-text text-capitalize"> <span class="modal-title fw-bolder titles">Transacción:
                     </span>
                     ${book.transaction}
-                    (${book.price})
+                    $${book.price}
                   </p>
                 </div>
                 <!-- Conditional information -->
