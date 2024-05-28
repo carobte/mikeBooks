@@ -130,11 +130,15 @@ body{
     background-color: var(--cream-color);
 }
 
-// ul reset predefined styles
+// ul and li reset predefined styles
 
 .list-group {
     --bs-list-group-bg: var(--white);
     --bs-list-group-color: var(--darkest-brown);
+}
+
+.list-group-item {
+    position: static;
 }
 
 /* Responsive */
