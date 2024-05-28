@@ -5,7 +5,7 @@ import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap'
 
 //import functions from api.js
-import { getUsers, validateUsername, createUser, getUserID } from "./api.js"
+import { getUsers, validateUsername, createUser } from "./api.js"
 
 // Get log in form data from index.html
 const loginForm = document.querySelector('#login-form')
@@ -27,67 +27,83 @@ let subscription
 
 //get subscription value
 radioInput.addEventListener('click', function (event) {
-    if (event.target.getAttribute('name') === "options-base") {
-        subscription = event.target.getAttribute('value')
-        console.log(subscription)
-    }
+  if (event.target.getAttribute('name') === "options-base") {
+    subscription = event.target.getAttribute('value')
+    console.log(subscription)
+  }
 })
 
 // add submit event listener to login form
 loginForm.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    const user = await validateUsername(usernameLogin.value.toLowerCase())
-    if (!user) {
-        alert("Usuario incorrecto o no estás registrado")
+  event.preventDefault()
+  const user = await validateUsername(usernameLogin.value.toLowerCase())
+  if (!user) {
+    alert("Usuario incorrecto o no estás registrado")
+  } else {
+    if (user.password === passwordLogin.value.toLowerCase()) {
+      alert("Has iniciado sesión")
+      localStorage.setItem("userLogged", JSON.stringify(user))
     } else {
-        if (user.password === passwordLogin.value.toLowerCase()) {
-            alert("Has iniciado sesión")
-            localStorage.setItem("userLogged", JSON.stringify(user))
-        } else {
-            alert("Contraseña incorrecta")
-        }
+      alert("Contraseña incorrecta")
     }
-    loginForm.reset()
+  }
+  loginForm.reset()
 })
 
 //add submit event listener to registration form 
 registrationForm.addEventListener('submit', async function (event) {
-    event.preventDefault()
-    let userExists = await validateUsername(username.value)
-    if (userExists) {
-        alert("Usuario ya existe")
-        registrationForm.reset()
+  event.preventDefault()
+  let userExists = await validateUsername(username.value)
+  if (userExists) {
+    alert("Usuario ya existe")
+    registrationForm.reset()
+  } else {
+    if (password.value === confirmPassword.value) {
+      const newUser = {
+        "nickname": username.value,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
+        "location": location.value.toLowerCase(),
+        "password": password.value,
+        "number": number.value,
+        "email": email.value.toLowerCase(),
+        "subscription": subscription,
+        "books": [],
+        "reviews": []
+      }
+      createUser(newUser)
+      registrationForm.reset()
     } else {
-        if (password.value === confirmPassword.value) {
-            const newUser = {
-                "nickname": username.value,
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
-                "location": location.value.toLowerCase(),
-                "password": password.value,
-                "number": number.value,
-                "email": email.value.toLowerCase(),
-                "subscription": subscription,
-                "books": [],
-                "reviews": []
-            }
-            createUser(newUser)
-            registrationForm.reset()
-        } else {
-            alert("Las contraseñas no coinciden")
-        }
+      alert("Las contraseñas no coinciden")
     }
+  }
 })
+
+// Function to validate if there's a user logged in
+
+function isLogged() {
+  let userLogged = JSON.parse(localStorage.getItem("userLogged"))
+  if (!userLogged) {
+    return false
+  } else {
+    return userLogged
+  }
+}
 
 // Print books
 
 const containerBooks = document.querySelector("#container-books")
 
 async function indexBooks(container) {
-    let users = await getUsers()
-    users.forEach(user => {
-        const books = user.books
-        books.forEach(book => {
-            container.innerHTML += `
+  let users = await getUsers()
+  let userLogged = isLogged()
+
+  // Extract the books from all the users
+  users.forEach(user => {
+    const books = user.books
+    // Print each book in the container
+    books.forEach(book => {
+      container.innerHTML += `
+      <!-- card -->
         <article class="card bg-our-white mt-5">
         <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal${book.id}">
         <img src=${book.image}
@@ -100,7 +116,7 @@ async function indexBooks(container) {
             </p>
           </div>
         </div>
-        <!-- modal -->
+        <!-- modal for each card -->
         <div class="modal fade" id="book-modal${book.id}" tabindex="-1" aria-labelledby="book-modal${book.id}" aria-hidden="true">
           <div class="modal-dialog  modal-dialog-centered box-shadow-modal ">
             <div class="modal-content bg-our-white">
@@ -129,6 +145,7 @@ async function indexBooks(container) {
                     (${book.price})
                   </p>
                 </div>
+                <!-- Conditional information -->
                 <div id="owner-info${book.id}" class= "col-6">
 
                 </div>
@@ -138,9 +155,37 @@ async function indexBooks(container) {
         </div>
       </article>`
 
+      // Conditional prints for owner info on the modals.
+      let ownerInfo = document.querySelector(`#owner-info${book.id}`)
 
-            let ownerInfo = document.querySelector(`#owner-info${book.id}`)
+      // No user logged in
+      if (!userLogged) {
+        ownerInfo.innerHTML = `                  
+        <p data-bs-dismiss="modal" class="modal-text mb-4 general-text"> Para ver la información de contacto, debes
+          <a href="#login-form" class="titles modal-anchor text-decoration-none fw-bold">Iniciar sesión</a>
+        </p>
+        <p data-bs-dismiss="modal" class="modal-text mb-4 general-text">¿No tienes una cuenta aún? <a href="#registration-form"
+          class="titles modal-anchor text-decoration-none fw-bold">Registrate</a></p>
+          `
+      // If there's a user logged in
+      } else if(userLogged ){
+        // If the user logged in is the owner of the book
+          if(userLogged.id === user.id){
+            ownerInfo.classList.add("align-content-center", "btns-owner")
             ownerInfo.innerHTML = `
+            <p class="modal-text mb-4 general-text text-center"> <span class="modal-title fw-bolder titles"> Eres el dueño de este libro:
+            </span></p>
+          <button class="btn btn-edit mx-2 titles fw-bold bg-our-white"><i class="bi bi-pencil-square"></i>
+            Editar</button>
+          <button class="btn btn-delete titles fw-bold bg-creamy"> <i
+              class="bi bi-trash-fill"></i>Eliminar</button>`
+          } else {
+            
+          }
+      }
+
+
+/*       ownerInfo.innerHTML = `
             <a  href=${user.image} class="text-decoration-none">
                 <p class="modal-text mb-4 general-text"> <span class="modal-title fw-bolder titles text-capitalize">Dueño:
                 </span> ${user.nickname}</p>
@@ -151,9 +196,9 @@ async function indexBooks(container) {
                 <a href="mailto:${user.email}?Subject=Interesado%20en%20el%20libro%20${book.name}" target="_blank"
                 class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
                     class="bi bi-envelope text-primary "></i> Escríbeme un correo</a>
-            </a>` 
-        })
+            </a>` */
     })
+  })
 }
 
 
