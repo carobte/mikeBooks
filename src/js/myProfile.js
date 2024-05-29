@@ -1,6 +1,4 @@
-
 // Function to validate if there's a user logged in
-
 function isLogged() {
     let userLogged = JSON.parse(localStorage.getItem("userLogged"))
     if (!userLogged) {
@@ -30,13 +28,21 @@ const deleteButton = document.querySelector('#delete-user-button')
 // get user, userId and user books from local storage
 const user = isLogged()
 const userId = user.id 
+console.log(userId)
 const userBooks = user.books
 
-//get user information container, cards container and logout option from myProfile.html
+//get user information container and cards container from myProfile.html
 const myProfileInfo = document.querySelector('#my-profile-info')
-const logout = document.querySelector('#log-out')
 const userBooksSection = document.querySelector('#user-books')
-console.log(myProfileInfo)
+
+//create logout function
+const logout = document.getElementById('log-out').addEventListener('click', () => {
+  if (confirm("¿Está seguro de cerrar sesión?")) {
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  }
+})
+
 // event submit form book create
 booksForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -71,7 +77,7 @@ function createBook (name, publisher, year, author, transaction, price, descript
 }
 
 //Create functionality delete account button 
-deleteButton.addEventListener("click", async () => { 
+async function deleteUserLogged(userId) { 
     if (confirm("¿Está seguro de eliminar su cuenta?")) {
         await deleteUser(userId)
         localStorage.removeItem('userLogged')
@@ -79,12 +85,10 @@ deleteButton.addEventListener("click", async () => {
     } else {
         alert("No se pudo eliminar")
     }
-})
+}
 
 //create innerHTML to print my profile information
-
 function showUserInfo(myProfileInfo, user) {
-    console.log("User")
 myProfileInfo.innerHTML = `
 <article class="row justify-content-lg-between">  
 <!-- box profile info -->
@@ -104,7 +108,7 @@ myProfileInfo.innerHTML = `
         <li class="list-group-item border-0">${user.email}</li>
       </ul>
       <div class="d-flex content-btn-delete">
-        <button id="delete-user-button" class="btn btn-delete p-2 bg-creamy general-text"><i
+        <button id="delete-user-button" class="btn btn-delete p-2 bg-creamy general-text" onclick="deleteUserLogged()"><i
             class="bi bi-trash-fill"></i>Eliminar cuenta</button>
       </div>
     </div>
@@ -130,6 +134,7 @@ comments.forEach(comment => {
 })
 }
 
+//create print my books funtionality
 userBooks.forEach(book => {
     userBooksSection.innerHTML += `
     <article class="card bg-our-white mt-5">
@@ -191,9 +196,3 @@ userBooks.forEach(book => {
 })
 showUserInfo(myProfileInfo, user) 
 
-logout.addEventListener('click', () => {
-    if (confirm("¿Está seguro de cerrar sesión?")) {
-        localStorage.removeItem('userLogged')
-        window.location.href = "/"
-    }
-})
