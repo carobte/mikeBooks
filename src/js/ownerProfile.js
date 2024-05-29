@@ -1,22 +1,27 @@
 // get html elements
 const infoOwner = document.querySelector('#owner-info')
+
+// logout
 const logout = document.getElementById('log-out').addEventListener('click', () => {
   if (confirm("¿Está seguro de cerrar sesión?")) {
       localStorage.removeItem('userLogged')
       window.location.href = "/"
   }
 })
+
+// get html containers 
 let containerBooks = document.querySelector('#container-books')
 let containerComments = document.querySelector('#container-comments')
+
+const commentsToOwner = JSON.parse(localStorage.getItem('userLogged')) // extract data in local storage of my user logged
+let myComments = commentsToOwner.reviews // get just reviews/comments
+console.log(myComments)
 
 // show information owner function
 function showInfoOwner() {
     const owner = JSON.parse(localStorage.getItem('owner')) // extract data in local storage
     console.log(owner.books)
     const listBooksOwner = owner.books // get just books of owner
-    const commentsToOwner = JSON.parse(localStorage.getItem('userLogged')) // extract data in local storage of my user logged
-    const myReviews = commentsToOwner.reviews
-    console.log(myReviews)
 
     // html content inner
     infoOwner.innerHTML += `
@@ -82,7 +87,6 @@ function showInfoOwner() {
                   </p>
                 </div>
                 <div class="owner-info col-6">
-                  <a  href="./src/pages/profileOwner.html" class="text-decoration-none">
                   <p class="modal-text mb-4 general-text text-capitalize"> <span class="modal-title fw-bolder titles">Dueño:
                     </span> ${owner.nickname}</p>
                   <a href="https://wa.me/+57${owner.number}/?text=Hola, deseo más información sobre tu libro:"
@@ -92,7 +96,6 @@ function showInfoOwner() {
                   <a href="mailto:${owner.email}?Subject=Interesado%20en%20el%20libro" target="_blank"
                     class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
                       class="bi bi-envelope text-primary "></i> Escríbeme un correo</a>
-                    </a>
                 </div>
               </div>
             </div>
@@ -101,20 +104,25 @@ function showInfoOwner() {
       </article>
         ` 
 
+      });
+    }
+    
+function showComments() { 
     // foreach of my comments
-    myReviews.forEach(comment => {
+    myComments.forEach(comment => {
       containerComments.innerHTML += `
-        <div class="p-3 rounded-1 bg-creamy comment-box">
-          <p class="comment">
-            ${comment.msg}
-          </p>
-        </div>
+      <div class="p-3 rounded-1 bg-creamy comment-box">
+        <p class="comment m-0">
+          ${comment.msg}
+        </p>
+      </div>
       `
     })
-    });
 }
 
+// call to functions
 showInfoOwner()
+showComments()
 
 
 
