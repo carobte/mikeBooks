@@ -7,6 +7,8 @@ import * as bootstrap from 'bootstrap'
 //import functions from api.js
 import { getUsers, validateUsername, createUser } from "./api.js"
 
+//import sweetalerts from alerts.js
+import { oopsAlert, alertAside } from "./alerts.js";
 
 // Get log in form data from index.html
 const loginForm = document.querySelector('#login-form')
@@ -46,14 +48,14 @@ loginForm.addEventListener('submit', async (event) => {
     event.preventDefault()
     const user = await validateUsername(usernameLogin.value)
     if (!user) {
-        alert("Usuario incorrecto o no estás registrado")
+        oopsAlert("Usuario incorrecto o no estás registrado")
     } else {
       if (user.password === passwordLogin.value.toLowerCase()) {
       alert("Has iniciado sesión")
       localStorage.setItem("userLogged", JSON.stringify(user))
       window.location.href = "/"
     } else {
-      alert("Contraseña incorrecta")
+      oopsAlert("Usuario o contraseña incorrecta")
     }
   }
   loginForm.reset()
@@ -64,7 +66,7 @@ registrationForm.addEventListener('submit', async function (event) {
   event.preventDefault()
   let userExists = await validateUsername(username.value)
   if (userExists) {
-    alert("Usuario ya existe")
+    oopsAlert("Usuario ya existe")
     registrationForm.reset()
   } else {
     if (password.value === confirmPassword.value) {
@@ -79,10 +81,10 @@ registrationForm.addEventListener('submit', async function (event) {
         "books": [],
         "reviews": []
       }
-      createUser(newUser)
+      await createUser(newUser)
       registrationForm.reset()
     } else {
-      alert("Las contraseñas no coinciden")
+      oopsAlert("Las contraseñas no coinciden")
     }
   }
 })

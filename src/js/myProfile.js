@@ -8,9 +8,14 @@ function isLogged() {
   }
 }
 
+  //import sweetalert 
+import Swal from 'sweetalert2'
+
 //import api functions from api.js
 import { deleteUser, deleteBook, getUserID, createBook } from "./api.js";
 
+//import alerts from alert.js
+import { alertAside } from "./alerts.js";
 // get data form
 const booksForm = document.querySelector('#books-form')
 const name = document.querySelector('#book-name')
@@ -41,10 +46,25 @@ const userBooksSection = document.querySelector('#user-books')
 
 //create logout function
 const logout = document.getElementById('log-out').addEventListener('click', () => {
-  if (confirm("¿Está seguro de cerrar sesión?")) {
+  Swal.fire({
+    title: "¿Estás seguro de cerrar sesión?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#f0dcd8",
+    cancelButtonColor: "#643f38",
+    cancelButtonText: "Cancelar",
+    confirmButtonText: "Cerrar sesión"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
       localStorage.removeItem('userLogged')
+      await Swal.fire({
+        title: "Hasta pronto!",
+        text: "Cerrando sesión...",
+        icon: "success"
+      })
       window.location.href = "/"
-  }
+    }
+  })
 })
 
 // event submit form book create
@@ -207,14 +227,28 @@ showUserInfo(myProfileInfo, user)
 indexBooks()
 
 //get delete button from myProfile.html and create functionality delete account button 
-const deleteButton = document.querySelector('#delete-user-button').addEventListener('click', async function() { 
-  if (confirm("¿Está seguro de eliminar su cuenta?")) {
-    await deleteUser(userId)
+const deleteButton = document.querySelector('#delete-user-button').addEventListener('click', function() { 
+  Swal.fire({
+    title: "¿Estás seguro de eliminar tu cuenta?",
+    text: "¡No podrás recuperarla después de esto!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#f0dcd8",
+    cancelButtonColor: "#643f38",
+    cancelButtonText: "Cancelar",
+    confirmButtonText: "¡Sí, eliminala!"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      await deleteUser(userId)
       localStorage.removeItem('userLogged')
+      await Swal.fire({
+        title: "¡Eliminado!",
+        text: "Cuenta eliminada.",
+        icon: "success"
+      })
       window.location.href = "/"
-  } else {
-      alert("No se pudo eliminar")
-  }
+    }
+  })
 })
 
 async function handleDelete(userId, bookId) {
