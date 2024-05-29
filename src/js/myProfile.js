@@ -1,6 +1,4 @@
-
 // Function to validate if there's a user logged in
-
 function isLogged() {
     let userLogged = JSON.parse(localStorage.getItem("userLogged"))
     if (!userLogged) {
@@ -24,19 +22,24 @@ const price = document.querySelector('#price')
 const description = document.querySelector('#description')
 const image = document.querySelector('#input-image')
 
-//get delete button from myProfile.html
-const deleteButton = document.querySelector('#delete-user-button')
-
 // get user, userId and user books from local storage
 const user = isLogged()
 const userId = user.id 
+console.log(userId)
 const userBooks = user.books
 
-//get user information container, cards container and logout option from myProfile.html
+//get user information container and cards container from myProfile.html
 const myProfileInfo = document.querySelector('#my-profile-info')
-const logout = document.querySelector('#log-out')
 const userBooksSection = document.querySelector('#user-books')
-console.log(myProfileInfo)
+
+//create logout function
+const logout = document.getElementById('log-out').addEventListener('click', () => {
+  if (confirm("¿Está seguro de cerrar sesión?")) {
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  }
+})
+
 // event submit form book create
 booksForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -56,7 +59,7 @@ transaction.addEventListener("change", ()=>{
 
 // createBook function
 function createBook (name, publisher, year, author, transaction, price, description, image) {
-    // add data form in new object
+    // add data form new object
     const newBook = {
         name: name.value,
         publisher: publisher.value,
@@ -70,21 +73,8 @@ function createBook (name, publisher, year, author, transaction, price, descript
     console.log(newBook)
 }
 
-//Create functionality delete account button 
-deleteButton.addEventListener("click", async () => { 
-    if (confirm("¿Está seguro de eliminar su cuenta?")) {
-        await deleteUser(userId)
-        localStorage.removeItem('userLogged')
-        window.location.href = "/"
-    } else {
-        alert("No se pudo eliminar")
-    }
-})
-
 //create innerHTML to print my profile information
-
 function showUserInfo(myProfileInfo, user) {
-    console.log("User")
 myProfileInfo.innerHTML = `
 <article class="row justify-content-lg-between">  
 <!-- box profile info -->
@@ -120,8 +110,8 @@ myProfileInfo.innerHTML = `
 </div>
 </article>
 `
+//get comments section and comments from the user
 let comments = user.reviews
-
 let commentContainer = document.querySelector('#comment-container')
 comments.forEach(comment => {
     commentContainer.innerHTML += `
@@ -130,6 +120,7 @@ comments.forEach(comment => {
 })
 }
 
+//create print my books funtionality
 userBooks.forEach(book => {
     userBooksSection.innerHTML += `
     <article class="card bg-our-white mt-5">
@@ -191,9 +182,15 @@ userBooks.forEach(book => {
 })
 showUserInfo(myProfileInfo, user) 
 
-logout.addEventListener('click', () => {
-    if (confirm("¿Está seguro de cerrar sesión?")) {
-        localStorage.removeItem('userLogged')
-        window.location.href = "/"
-    }
+//get delete button from myProfile.html and create functionality delete account button 
+const deleteButton = document.querySelector('#delete-user-button').addEventListener('click', async function() { 
+  if (confirm("¿Está seguro de eliminar su cuenta?")) {
+    await deleteUser(userId)
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  } else {
+      alert("No se pudo eliminar")
+  }
 })
+
+
