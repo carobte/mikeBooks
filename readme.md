@@ -1,33 +1,32 @@
+# Project Name: MikeBooks
 
-# Nombre del proyecto:  MikeBooks
+## Category:
+<p> Entertainment </p>
 
-## Categoría: 
-<p> Entretenimiento </p>
+## General Objective:
+<p> Connect the reading community of the "Valle de Aburrá" to facilitate the exchange or sale of books. </p>
 
-## Objetivo general: 
-<p> Conectar a la comunidad lectora del Valle del Aburrá para facilitar el intercambio de libros o venta de los mismos. </p>
+## Project Proposal:
+<p> There are multiple reasons why people buy physical books: because they prefer having it physically over a PDF version, because they like the author, because it has been recommended to them, because they are familiar with the literary universe, because it catches their attention at the moment, among others. Over time, these initial motivations may change, as can the perspective of the books that were acquired. Often, this results in the user no longer wanting to keep them, either because they did not like the book initially or because their tastes have changed over time.</p>
 
-## Planteamiento del proyecto: 
-<p> Existen múltiples motivos por los cuales las personas compran libros físicos: porque prefieren tenerlo físico a su versión en pdf, porque les gusta el autor, porque se lo han recomendado, porque conocen el universo literario, porque les llama la atención en ese momento, entre otros.  A lo largo del tiempo, estas motivaciones iniciales pueden cambiar y a su vez, la perspectiva de los libros que fueron adquiridos. En muchas ocasiones, esto resulta en que el usuario ya no desea conservarlos, ya sea porque el libro no le gustó inicialmente o porque sus gustos también cambian con el tiempo.</p>
-
-<p>Es aquí, donde entra MikeBooks, posibilitando una opción para conectarse con otras personas de su ciudad, ver qué libros se ofrecen y a su vez ofrecer sus libros para intercambiar o vender, permitiendo un ahorro e incluso generar ingresos.
+<p>This is where MikeBooks comes in, providing an option to connect with other people in their city, see what books are being offered, and in turn offer their own books for exchange or sale, allowing for savings and even generating income.
 </p>
 
-## Alcance del proyecto
+## Project Scope
 
-- Corto plazo:  La aplicación web deberá presentar al usuario una interfaz intuitiva, agradable, responsiva que le permita explorar los libros y ver más detalles de cada libro. (Nombre, año, editorial, autor, descripción, intercambio o venta, precio, y la foto)
+- Short term: The web application should present the user with an intuitive, pleasant, responsive interface that allows them to explore books and see more details about each book. (Name, year, publisher, author, description, exchange or sale, price, and photo)
 
-- Mediano plazo: Permitirá al usuario crear su cuenta e inscribir sus libros, iniciar y cerrar sesión. Dentro de su perfil, un crud para manipular los libros que posea (ver, crear, modificar, eliminar los libros) y contactarse con el dueño mediante un correo electrónico o whatsapp si se encuentra logueado. 
+- Medium term: It will allow the user to create their account and register their books, log in and out. Within their profile, a CRUD to manage the books they own (view, create, modify, delete books) and contact the owner via email or WhatsApp if they are logged in.
 
-- Largo plazo: Podrá ver el perfil de otro usuario, con los libros que este tenga y dejar comentarios acerca de la experiencia de intercambio/venta con dicho usuario.
+- Long term: Users will be able to view another user's profile, with the books they have, and leave comments about the exchange/sale experience with that user.
 
-### Por fuera del alcance: 
+### Out of Scope:
 
-No estará en el alcance de la aplicación comprobar el  estado de los libros ni el estado intercambio, tampoco implementará pasarelas de pago para la compra/venta de estos, ni se hace responsable del envío o precios de los libros.
+The application will not check the condition of the books or the status of the exchange, nor will it implement payment gateways for the purchase/sale of these books. It will not be responsible for the shipping or pricing of the books.
 
-## Proyecto
+## Project
 
-### Tecnologías usadas
+### Technologies Used
 
 - HTML
 - CSS (SCSS)
@@ -40,34 +39,29 @@ No estará en el alcance de la aplicación comprobar el  estado de los libros ni
 - Trello
 - Figma
 
-### Integrantes del equipo
+### Team Members
 
 <ul>
-
 <li><a href="https://github.com/mspena14"> Marlon Peña</a></li>
 <li><a href="https://github.com/anamh02"> Ana María Muñoz</a></li>
 <li><a href="https://github.com/ecc97"> Edwin Carmona</a></li>
-
 </ul>
 
-### Pasos para ejecutar el proyecto
+### Steps to Run the Project
 
 1. <code> git clone https://github.com/carobte/mikebooks </code>
 
-2. Abrir el proyecto en el editor de código (VisualStudio Code)
+2. Open the project in the code editor (VisualStudio Code)
 
-3. Ejecutar en la consola <code> npm install</code> para instalar las dependencias
+3. Run <code> npm install</code> in the console to install the dependencies
 
-4. Para subir la base de datos, es necesario abrir en una consola dentro de la carpeta del proyecto <code> npx json-server .\public\database\database.json </code>
+4. To start the database, it is necessary to open a console within the project folder and run <code> npx json-server .\public\database\database.json </code>
 
-5. Ejecutar <code> npm run dev</code> para abrir el proyecto en tu navegador
+5. Run <code> npm run dev</code> to open the project in your browser
 
 ### Links
 
 <ul>
-
-<li><a href="https://trello.com/invite/b/GiaUPwFc/ATTId880faba2b9fdd220d9af0294d353ec243CA01CE/mike-team"> Tareas en Trello</a></li>
-<li><a href="https://www.figma.com/proto/1SRzneIIDT9j6FQuSuKxfD/MikeBook?node-id=379-26&t=5qiNiKHuUq2LJTnp-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=379%3A26"> Mockup en Figma</a></li>
-
-
+<li><a href="https://trello.com/invite/b/GiaUPwFc/ATTId880faba2b9fdd220d9af0294d353ec243CA01CE/mike-team"> Tasks on Trello</a></li>
+<li><a href="https://www.figma.com/proto/1SRzneIIDT9j6FQuSuKxfD/MikeBook?node-id=379-26&t=5qiNiKHuUq2LJTnp-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=379%3A26"> Mockup on Figma</a></li>
 </ul>
