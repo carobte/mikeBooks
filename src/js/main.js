@@ -213,10 +213,19 @@ async function indexBooks(container) {
   })
 }
 
-
 indexBooks(containerBooks)
 
+// Function to saveOwner in localStorage and go to their profile
 function saveOwner(user) {
   localStorage.setItem("owner", JSON.stringify(user)) 
   window.location.href="./src/pages/profileOwner.html"
 }
+
+// Function to clear Owner from localStorage
+function clearOwner(){
+  localStorage.removeItem("owner")
+}
+
+// Clear Owner each time the user enters in index.html
+clearOwner()
+
