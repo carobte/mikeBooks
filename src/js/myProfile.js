@@ -1,6 +1,4 @@
-
 // Function to validate if there's a user logged in
-
 function isLogged() {
   let userLogged = JSON.parse(localStorage.getItem("userLogged"))
   if (!userLogged) {
@@ -24,26 +22,30 @@ const price = document.querySelector('#price')
 const description = document.querySelector('#description')
 const image = document.querySelector('#input-image')
 
-//get delete button from myProfile.html
-const deleteButton = document.querySelector('#delete-user-button')
-
 // get user, userId and user books from local storage
 const user = isLogged()
 const userId = user.id
 
 async function getBooks() {
   let user = await getUserID(userId)
-  const userBooks = user.books
+  console.log(userId)
+const userBooks = user.books
   return userBooks
 }
 
 const userBooks = await getBooks()
 
-//get user information container, cards container and logout option from myProfile.html
+//get user information container and cards container from myProfile.html
 const myProfileInfo = document.querySelector('#my-profile-info')
-const logout = document.querySelector('#log-out')
 const userBooksSection = document.querySelector('#user-books')
-let idBook
+
+//create logout function
+const logout = document.getElementById('log-out').addEventListener('click', () => {
+  if (confirm("¿Está seguro de cerrar sesión?")) {
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  }
+})
 
 // event submit form book create
 booksForm.addEventListener('submit', async (e) => {
@@ -87,7 +89,6 @@ deleteButton.addEventListener("click", async () => {
 })
 
 //create innerHTML to print my profile information
-
 function showUserInfo(myProfileInfo, user) {
   myProfileInfo.innerHTML = `
 <article class="row justify-content-lg-between">  
@@ -205,10 +206,14 @@ function indexBooks() {
 showUserInfo(myProfileInfo, user)
 indexBooks()
 
-logout.addEventListener('click', () => {
-  if (confirm("¿Está seguro de cerrar sesión?")) {
-    localStorage.removeItem('userLogged')
-    window.location.href = "/"
+//get delete button from myProfile.html and create functionality delete account button 
+const deleteButton = document.querySelector('#delete-user-button').addEventListener('click', async function() { 
+  if (confirm("¿Está seguro de eliminar su cuenta?")) {
+    await deleteUser(userId)
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  } else {
+      alert("No se pudo eliminar")
   }
 })
 
