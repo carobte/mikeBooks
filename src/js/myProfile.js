@@ -1,21 +1,21 @@
 // Function to validate if there's a user logged in
 function isLogged() {
-    let userLogged = JSON.parse(localStorage.getItem("userLogged"))
-    if (!userLogged) {
-        window.location.href = "/"
-    } else {
-      return userLogged
-    }
+  let userLogged = JSON.parse(localStorage.getItem("userLogged"))
+  if (!userLogged) {
+    window.location.href = "/"
+  } else {
+    return userLogged
   }
+}
 
 //import api functions from api.js
-import { deleteUser } from "./api.js";
+import { deleteUser, deleteBook, getUserID, createBook } from "./api.js";
 
 // get data form
 const booksForm = document.querySelector('#books-form')
 const name = document.querySelector('#book-name')
 const publisher = document.querySelector('#publishing-house')
-const year = document.querySelector('#publication-year') 
+const year = document.querySelector('#publication-year')
 const author = document.querySelector('#author')
 const transaction = document.querySelector('#transaction')
 const price = document.querySelector('#price')
@@ -24,9 +24,16 @@ const image = document.querySelector('#input-image')
 
 // get user, userId and user books from local storage
 const user = isLogged()
-const userId = user.id 
-console.log(userId)
+const userId = user.id
+
+async function getBooks() {
+  let user = await getUserID(userId)
+  console.log(userId)
 const userBooks = user.books
+  return userBooks
+}
+
+const userBooks = await getBooks()
 
 //get user information container and cards container from myProfile.html
 const myProfileInfo = document.querySelector('#my-profile-info')
@@ -41,41 +48,49 @@ const logout = document.getElementById('log-out').addEventListener('click', () =
 })
 
 // event submit form book create
-booksForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    createBook(name, publisher, year, author, transaction, price, description, image) // call createBook function
+booksForm.addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const newBook = {
+    name: name.value,
+    publisher: publisher.value,
+    year: year.value,
+    author: author.value,
+    transaction: transaction.value,
+    price: price.value,
+    description: description.value,
+    image: image.value
+  }
+  if (!idBook) {
+    createBook(userId, newBook)
+    window.location.reload()
+  }
 })
 
 //event change for transaction and price
-transaction.addEventListener("change", ()=>{
-    // conditional to verify transaction value
-    if (transaction.value === "trade") {
-        price.value=0
-        price.setAttribute("disabled", "")
-    } else {
-        price.removeAttribute("disabled", "")
-    }
+transaction.addEventListener("change", () => {
+  // conditional to verify transaction value
+  if (transaction.value === "trade") {
+    price.value = 0
+    price.setAttribute("disabled", "")
+  } else {
+    price.removeAttribute("disabled", "")
+  }
 })
 
-// createBook function
-function createBook (name, publisher, year, author, transaction, price, description, image) {
-    // add data form new object
-    const newBook = {
-        name: name.value,
-        publisher: publisher.value,
-        year: year.value,
-        author: author.value,
-        transaction: transaction.value,
-        price: price.value,
-        description: description.value,
-        image: image.value
-    }
-    console.log(newBook)
-}
+//Create functionality delete account button 
+deleteButton.addEventListener("click", async () => {
+  if (confirm("¿Está seguro de eliminar su cuenta?")) {
+    await deleteUser(userId)
+    localStorage.removeItem('userLogged')
+    window.location.href = "/"
+  } else {
+    alert("No se pudo eliminar")
+  }
+})
 
 //create innerHTML to print my profile information
 function showUserInfo(myProfileInfo, user) {
-myProfileInfo.innerHTML = `
+  myProfileInfo.innerHTML = `
 <article class="row justify-content-lg-between">  
 <!-- box profile info -->
 <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12 col-xs-12">
@@ -110,19 +125,23 @@ myProfileInfo.innerHTML = `
 </div>
 </article>
 `
-//get comments section and comments from the user
-let comments = user.reviews
-let commentContainer = document.querySelector('#comment-container')
-comments.forEach(comment => {
+  let comments = user.reviews
+
+  let commentContainer = document.querySelector('#comment-container')
+  comments.forEach(comment => {
     commentContainer.innerHTML += `
     <div class="p-3 rounded-1 bg-creamy comment-box">${comment.msg}</div>
     `
-})
+  })
 }
 
-//create print my books funtionality
-userBooks.forEach(book => {
-    userBooksSection.innerHTML += `
+function indexBooks() {
+
+  userBooks.forEach(book => {
+    // Necessary because userBooksSection.innerHTML was breaking the events.
+    const newDiv = document.createElement("div")
+    userBooksSection.appendChild(newDiv)
+    newDiv.innerHTML = `
     <article class="card bg-our-white mt-5">
     <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal${book.id}">
     <img src=${book.image}
@@ -164,13 +183,12 @@ userBooks.forEach(book => {
                 (${book.price})
               </p>
             </div>
-            <!-- Conditional information -->
             <div id="owner-info${book.id}" class= "col-6">
             <p class="modal-text mb-4 general-text text-center"> <span class="modal-title fw-bolder titles text-capitalize"> ${user.nickname}</span>, eres el dueño de este libro
             </p>
           <button class="btn btn-edit mx-2 titles fw-bold bg-our-white"><i class="bi bi-pencil-square"></i>
             Editar</button>
-          <button class="btn btn-delete titles fw-bold bg-creamy"> <i
+          <button class="btn btn-delete titles fw-bold bg-creamy" id=${book.id}> <i
               class="bi bi-trash-fill"></i>Eliminar</button>
             </div>
           </div>
@@ -178,9 +196,15 @@ userBooks.forEach(book => {
       </div>
     </div>
   </article>
-    `
-})
-showUserInfo(myProfileInfo, user) 
+  `
+    document.getElementById(book.id).addEventListener("click", () => handleDelete(userId, book.id))
+
+  }
+  )
+}
+
+showUserInfo(myProfileInfo, user)
+indexBooks()
 
 //get delete button from myProfile.html and create functionality delete account button 
 const deleteButton = document.querySelector('#delete-user-button').addEventListener('click', async function() { 
@@ -193,4 +217,9 @@ const deleteButton = document.querySelector('#delete-user-button').addEventListe
   }
 })
 
-
+async function handleDelete(userId, bookId) {
+  if (confirm("¿Está seguro que desea eliminar su libro?")) {
+    await deleteBook(userId, bookId)
+    window.location.reload()
+  }
+}
