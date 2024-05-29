@@ -78,12 +78,12 @@ booksForm.addEventListener('submit', async (e) => {
     transaction: transaction.value,
     price: price.value,
     description: description.value,
-    image: image.value
+    image: "https://descubierta.es/wp-content/uploads/2022/06/Cover.jpg"
   }
-  if (!idBook) {
+
     createBook(userId, newBook)
     window.location.reload()
-  }
+
 })
 
 //event change for transaction and price
