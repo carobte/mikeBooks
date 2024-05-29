@@ -97,16 +97,6 @@ transaction.addEventListener("change", () => {
   }
 })
 
-//Create functionality delete account button 
-deleteButton.addEventListener("click", async () => {
-  if (confirm("¿Está seguro de eliminar su cuenta?")) {
-    await deleteUser(userId)
-    localStorage.removeItem('userLogged')
-    window.location.href = "/"
-  } else {
-    alert("No se pudo eliminar")
-  }
-})
 
 //create innerHTML to print my profile information
 function showUserInfo(myProfileInfo, user) {
