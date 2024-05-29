@@ -22,9 +22,6 @@ const price = document.querySelector('#price')
 const description = document.querySelector('#description')
 const image = document.querySelector('#input-image')
 
-//get delete button from myProfile.html
-const deleteButton = document.querySelector('#delete-user-button')
-
 // get user, userId and user books from local storage
 const user = isLogged()
 const userId = user.id 
@@ -62,7 +59,7 @@ transaction.addEventListener("change", ()=>{
 
 // createBook function
 function createBook (name, publisher, year, author, transaction, price, description, image) {
-    // add data form in new object
+    // add data form new object
     const newBook = {
         name: name.value,
         publisher: publisher.value,
@@ -74,17 +71,6 @@ function createBook (name, publisher, year, author, transaction, price, descript
         image: image.value
     }
     console.log(newBook)
-}
-
-//Create functionality delete account button 
-async function deleteUserLogged(userId) { 
-    if (confirm("¿Está seguro de eliminar su cuenta?")) {
-        await deleteUser(userId)
-        localStorage.removeItem('userLogged')
-        window.location.href = "/"
-    } else {
-        alert("No se pudo eliminar")
-    }
 }
 
 //create innerHTML to print my profile information
@@ -108,7 +94,7 @@ myProfileInfo.innerHTML = `
         <li class="list-group-item border-0">${user.email}</li>
       </ul>
       <div class="d-flex content-btn-delete">
-        <button id="delete-user-button" class="btn btn-delete p-2 bg-creamy general-text" onclick="deleteUserLogged()"><i
+        <button id="delete-user-button" class="btn btn-delete p-2 bg-creamy general-text"><i
             class="bi bi-trash-fill"></i>Eliminar cuenta</button>
       </div>
     </div>
@@ -124,8 +110,8 @@ myProfileInfo.innerHTML = `
 </div>
 </article>
 `
+//get comments section and comments from the user
 let comments = user.reviews
-
 let commentContainer = document.querySelector('#comment-container')
 comments.forEach(comment => {
     commentContainer.innerHTML += `
@@ -195,4 +181,16 @@ userBooks.forEach(book => {
     `
 })
 showUserInfo(myProfileInfo, user) 
+
+//get delete button from myProfile.html and create functionality delete account button 
+const deleteButton = document.querySelector('#delete-user-button').addEventListener('click', async function() { 
+  if (confirm("¿Está seguro de eliminar su cuenta?")) {
+    await deleteUser(userId)
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  } else {
+      alert("No se pudo eliminar")
+  }
+})
+
 
