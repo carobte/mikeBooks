@@ -7,6 +7,8 @@ import * as bootstrap from 'bootstrap'
 //import functions from api.js
 import { getUsers, validateUsername, createUser } from "./api.js"
 
+//import sweetalert 
+import Swal from 'sweetalert2'
 
 // Get log in form data from index.html
 const loginForm = document.querySelector('#login-form')
