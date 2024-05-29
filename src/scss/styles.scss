@@ -68,6 +68,12 @@ body{
     padding-top: 120px;
 }
 
+/* nav styles z-index to overcome */
+
+nav {
+    z-index: 1;
+}
+
 /* About us section */
 
 #about-us{
