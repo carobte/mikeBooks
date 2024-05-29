@@ -187,10 +187,7 @@ async function indexBooks(container) {
             ownerInfo.innerHTML = `
             <p class="modal-text mb-4 general-text text-center"> <span class="modal-title fw-bolder titles text-capitalize"> ${user.nickname}</span>, eres el dueño de este libro
             </p>
-          <button class="btn btn-edit mx-2 titles fw-bold bg-our-white"><i class="bi bi-pencil-square"></i>
-            Editar</button>
-          <button class="btn btn-delete titles fw-bold bg-creamy"> <i
-              class="bi bi-trash-fill"></i>Eliminar</button>`
+            <p class="modal-text mb-4 general-text text-center"> Ve a <a href="myProfile.html" class="modal-title fw-bolder titles">tu perfil</a> si quieres eliminar o editar tus libros </p>`
           } else {
             // User logged in and different of the owner
             ownerInfo.innerHTML = `
