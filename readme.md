@@ -45,6 +45,7 @@ The application will not check the condition of the books or the status of the e
 <li><a href="https://github.com/mspena14"> Marlon Peña</a></li>
 <li><a href="https://github.com/anamh02"> Ana María Muñoz</a></li>
 <li><a href="https://github.com/ecc97"> Edwin Carmona</a></li>
+<li><a href="https://github.com/carobte"> Carolina Bustamante </a></li>
 </ul>
 
 ### Steps to Run the Project
