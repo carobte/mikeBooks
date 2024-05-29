@@ -1,4 +1,10 @@
 const infoOwner = document.querySelector('#owner-info')
+const logout = document.getElementById('log-out').addEventListener('click', () => {
+  if (confirm("¿Está seguro de cerrar sesión?")) {
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  }
+})
 let containerBooks = document.querySelector('#container-books')
 
 function showInfoOwner() {
