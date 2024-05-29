@@ -18,7 +18,6 @@ export async function getUsers() {
 export async function getUserID(userID) {
     const response = await fetch(`${API}/${userID}`)
     const data = await response.json()
-    console.log(data)
     return data
 }
 
@@ -40,7 +39,6 @@ export async function deleteUser(userID) {
     })
 }
 
-
 // Function to validate if a user exists 
 export async function validateUsername(usernameLogin) {
     const response = await fetch(`${API}?nickname=${usernameLogin}`)
@@ -54,53 +52,13 @@ export async function validateUsername(usernameLogin) {
     }
 }
 
-
-//function enter and enter book
-
-// async function handleEventAddSumit() {
-//     const btnEnviar = document.querySelector('#enviar');
-
-//     btnEnviar.addEventListener('click', async () => {
-//         let newBook = {
-//             "id": "5",
-//             "name": "Don Quijote de la Mancha",
-//             "year": "1605",
-//             "author": "Miguel de Cervantes",
-//             "publisher": "Francisco de Robles",
-//             "description": "A story of a nobleman who reads so many chivalric romances that he loses his sanity and decides to become a knight-errant.",
-//             "image": "https://images.cdn1.buscalibre.com/fit-in/360x360/07/e8/07e80d26f5f3f11e0f07e8a702e8023c.jpg",
-//             "transaction": "sell",
-//             "price": "60000"
-//         };
-
-//         let userId = "2";
-
-//         try {
-//             let response = await fetch(`http://localhost:3000/users/${userId}`);
-//             let user = await response.json();
-
-//             user.books.push(newBook);
-
-//             let updateResponse = await fetch(`http://localhost:3000/users/${userId}`, {
-//                 method: 'PUT',
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 },
-//                 body: JSON.stringify(user)
-//             });
-
-//             let data = await updateResponse.json();
-//             console.log('Usuario actualizado:', data);
-//         } catch (error) {
-//             console.error('Error:', error);
-//         }
-//     });
-// }
-
+// createBook function
 export async function createBook(userId, newBook) {
-    const response = await fetch(`${API}/${userId}`)
-    const user = await response.json()
-    user.books.push(newBook)
+    let response = await fetch(`${API}/${userId}`)
+    let user = await response.json()
+
+    user.books.push(newBook);
+
     let updateResponse = await fetch(`${API}/${userId}`, {
         method: 'PUT',
         headers: {
@@ -109,10 +67,67 @@ export async function createBook(userId, newBook) {
         body: JSON.stringify(user)
     })
 
+    let data = await updateResponse.json()
+    console.log('Usuario actualizado:', data)
 
-} 
+}
+// funcion de actualizar
+async function updateBook(userId, bookId, name, publisher, year, author, transaction, price, description, image) {
+    try {
 
-// actualizar 
+        let response = await fetch(`http://localhost:3000/users/${userId}`)
+        let user = await response.json()
+
+
+        let bookIndex = user.books.findIndex(book => book.id === bookId)
+        if (bookIndex === -1) {
+            throw new Error('Book not found')
+        }
+
+        user.books[bookIndex] = {
+            id: bookId,
+            name: name,
+            year: year,
+            author: author,
+            publisher: publisher,
+            description: description,
+            image: image,
+            transaction: transaction,
+            price: price
+        };
+
+        let updateResponse = await fetch(`http://localhost:3000/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+
+        if (!updateResponse.ok) {
+            throw new Error('Network response was not ok ' + updateResponse.statusText);
+        }
+
+        let data = await updateResponse.json();
+        console.log('Usuario actualizado:', data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Function to delete a book
+export async function deleteBook(userId, bookId) {
+    let response = await fetch(`${API}/${userId}`);
+    let user = await response.json();
+    user.books = user.books.filter(book => book.id !== bookId);
+    let updateResponse = await fetch(`${API}/${userId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+}
 
 
 

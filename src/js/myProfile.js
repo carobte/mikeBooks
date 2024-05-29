@@ -60,6 +60,7 @@ booksForm.addEventListener('submit', async (e) => {
   }
   if (!idBook) {
     createBook(userId, newBook)
+    window.location.reload()
   }
 })
 
