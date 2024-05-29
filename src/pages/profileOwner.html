@@ -61,25 +61,11 @@
 
     <main class="bg-our-white main">
         <!-- profile container -->
-        <section class="container">
+        <section  class="container">
             <article class="row justify-content-lg-between">
                 <!-- box profile info -->
-                <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                    <article class="row gap-4 p-4 justify-content-between align-items-center">
-                        <div
-                            class="col-sm-4 d-flex justify-content-center align-items-center rounded-1 p-2 py-md-5 px-md-3 h-100 container-icon-user">
-                            <img class="col-6 col-md-8 col-xl-12" src="/public/icons/user-avatar.png" alt="icon-user">
-                        </div>
-                        <div class="col-sm-6 d-flex flex-column gap-4 general-text">
-                            <h3 class="titles mb-5">Nombre del usuario</h3>
-                            <h3 class="titles">Información del contacto</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item border-0">Ciudad</li>
-                                <li class="list-group-item border-0">Número de télefono</li>
-                                <li class="list-group-item border-0">Correo eléctronico</li>
-                            </ul>
-                        </div>
-                    </article>
+                <div id="owner-info" class="col-xl-8 col-lg-7 col-md-12 col-sm-12 col-xs-12">
+
                 </div>
                 <!-- box comments -->
                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -100,7 +86,7 @@
             </article>
         </section>
 
-        <section id="user-books" class="container">
+        <section id="container-books" class="d-flex flex-wrap justify-content-evenly gap-5 py-5">
 
         </section>
 
@@ -137,6 +123,7 @@
       </footer>
 
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/ownerProfile.js"></script>
 </body>
 
 </html>

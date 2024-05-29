@@ -34,12 +34,12 @@ radioInput.addEventListener('click', function (event) {
 
 // add submit event listener to login form
 loginForm.addEventListener('submit', async (event) => {
-  event.preventDefault()
-  const user = await validateUsername(usernameLogin.value.toLowerCase())
-  if (!user) {
-    alert("Usuario incorrecto o no estás registrado")
-  } else {
-    if (user.password === passwordLogin.value.toLowerCase()) {
+    event.preventDefault()
+    const user = await validateUsername(usernameLogin.value)
+    if (!user) {
+        alert("Usuario incorrecto o no estás registrado")
+    } else {
+      if (user.password === passwordLogin.value.toLowerCase()) {
       alert("Has iniciado sesión")
       localStorage.setItem("userLogged", JSON.stringify(user))
     } else {
@@ -101,7 +101,10 @@ async function indexBooks(container) {
     const books = user.books
     // Print each book in the container
     books.forEach(book => {
-      container.innerHTML += `
+      // It was necessary to create a new div because container.innerHTML was breaking the events.
+      const newDiv = document.createElement("div")
+      container.appendChild(newDiv)
+      newDiv.innerHTML = `
       <!-- card -->
         <article class="card bg-our-white mt-5">
         <div style="height: 20rem;" data-bs-toggle="modal" data-bs-target="#book-modal${book.id}">
@@ -111,7 +114,7 @@ async function indexBooks(container) {
             <h5 class="card-title mx-0  my-2 py-0 titles text-capitalize">${book.name} (${book.year})</h5>
             <p class="card-text d-flex justify-content-between m-0 titles text-capitalize"> ${book.author}</p>
             <p class="card-text d-flex justify-content-between m-0 titles text-capitalize"> ${user.location} <span class="ms-5"> ${book.transaction}
-                (${book.price})</span>
+                $${book.price}</span>
             </p>
           </div>
         </div>
@@ -141,7 +144,7 @@ async function indexBooks(container) {
                   <p class="modal-text mb-0 general-text text-capitalize"> <span class="modal-title fw-bolder titles">Transacción:
                     </span>
                     ${book.transaction}
-                    (${book.price})
+                    $${book.price}
                   </p>
                 </div>
                 <!-- Conditional information -->
@@ -181,7 +184,7 @@ async function indexBooks(container) {
           } else {
             // User logged in and different of the owner
             ownerInfo.innerHTML = `
-            <a href="./src/pages/profileOwner.html" class="text-decoration-none" onclick="saveOwner(${user})">
+            <div class="text-decoration-none" id='key-${user.id}'>
                 <p class="modal-text mb-4 general-text text-capitalize"> <span class="modal-title fw-bolder titles ">Dueño:
                 </span> ${user.nickname}</p>
                 <a href="https://wa.me/+57${user.number}/?text=Hola, deseo más información sobre tu libro: ${book.name}"
@@ -191,7 +194,9 @@ async function indexBooks(container) {
                 <a href="mailto:${user.email}?Subject=Interesado%20en%20el%20libro%20${book.name}" target="_blank"
                 class="modal-title modal-anchor fw-bolder mb-0 text-decoration-none titles d-block"><i
                     class="bi bi-envelope text-primary "></i> Escríbeme un correo</a>
-            </a>`
+            </div>`
+
+            document.getElementById("key-" + user.id).addEventListener("click", ()=> saveOwner(user))
           }
       }
     })
@@ -201,6 +206,17 @@ async function indexBooks(container) {
 
 indexBooks(containerBooks)
 
+// Function to saveOwner in localStorage and go to their profile
 function saveOwner(user) {
   localStorage.setItem("owner", JSON.stringify(user)) 
+  window.location.href="./src/pages/profileOwner.html"
 }
+
+
+// Function to clear Owner from localStorage
+function clearOwner(){
+  localStorage.removeItem("owner")
+}
+
+// Clear Owner each time the user enters in index.html
+clearOwner()

@@ -11,15 +11,37 @@
             "subscription": "premium",
             "books": [
                 {
-                    "id": "dasda",
-                    "name": "harry potter",
+                    "id": "A1B2C3",
+                    "name": "Harry Potter y la piedra filosofal",
                     "year": "1997",
-                    "author": "j.k rowling",
-                    "publisher": "planeta",
-                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "author": "J.K. Rowling",
+                    "publisher": "Planeta",
+                    "description": "Un niño descubre que es un mago y asiste a una escuela mágica.",
                     "image": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124498015_73wjf7xmztd3bjdi.jpg",
                     "transaction": "venta",
                     "price": "45000"
+                },
+                {
+                    "id": "V4W5X6",
+                    "name": "Crimen y castigo",
+                    "year": "1866",
+                    "author": "Fiódor Dostoyevski",
+                    "publisher": "The Russian Messenger",
+                    "description": "La historia de un hombre que lucha con la culpa después de cometer un asesinato.",
+                    "image": "https://quelibroleo.com/images/libros/libro_1362370739.png",
+                    "transaction": "intercambio",
+                    "price": "0"
+                },
+                {
+                    "id": "Y1Z2A3",
+                    "name": "La sombra del viento",
+                    "year": "2001",
+                    "author": "Carlos Ruiz Zafón",
+                    "publisher": "Planeta",
+                    "description": "Un joven descubre un libro maldito que cambia su vida para siempre.",
+                    "image": "https://images.cdn2.buscalibre.com/fit-in/360x360/4a/f8/4af862174ba709db62744f988c62e3b6.jpg",
+                    "transaction": "venta",
+                    "price": "40000"
                 }
             ],
             "reviews": [
@@ -34,7 +56,7 @@
             ]
         },
         {
-            "id": "2",  
+            "id": "2",
             "nickname": "ana",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
             "location": "medellín",
@@ -49,10 +71,32 @@
                     "year": "1867",
                     "author": "jorge isaacs",
                     "publisher": "self-published",
-                    "description": "lorem ipsum dolor sit amet, consectetur",
+                    "description": "Narra en primera persona el amor de Efraín por su prima María",
                     "image": "https://www.planetalector.com.co/usuaris/thumbnails/libros/fotos/312/360/portada_maria-novela-grafica_jorge-isaacs_202001231803.jpg",
                     "transaction": "venta",
                     "price": "40000"
+                },
+                {
+                    "id": "S1T2U3",
+                    "name": "El principito",
+                    "year": "1943",
+                    "author": "Antoine de Saint-Exupéry",
+                    "publisher": "Reynal & Hitchcock",
+                    "description": "Un aviador se encuentra con un joven príncipe de otro planeta.",
+                    "image": "https://images.cdn2.buscalibre.com/fit-in/360x360/1a/d0/1ad00b45cfb9ee36f629b922d55ced81.jpg",
+                    "transaction": "venta",
+                    "price": "30000"
+                },
+                {
+                    "id": "B4C5D6",
+                    "name": "Orgullo y prejuicio",
+                    "year": "1813",
+                    "author": "Jane Austen",
+                    "publisher": "T. Egerton",
+                    "description": "Una novela sobre el amor y las diferencias sociales en la Inglaterra del siglo XIX.",
+                    "image": "https://images.cdn2.buscalibre.com/fit-in/360x360/69/73/697367de2a03bc98c4cb963d35ae2af2.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
                 }
             ],
             "reviews": [
@@ -67,9 +111,9 @@
             ]
         },
         {
-            "id": "3",  
+            "id": "3",
             "nickname": "marlon",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
+            "image": "https://i.pinimg.com/736x/70/85/54/7085548f3d0372a08aea0291ddcee895.jpg",
             "location": "medellín",
             "password": "321",
             "number": "31374123",
@@ -86,6 +130,28 @@
                     "image": "https://libreriamorelos.mx/images/assets/portadas/9786077365846.jpg",
                     "transaction": "venta",
                     "price": "50000"
+                },
+                {
+                    "id": "J1K2L3",
+                    "name": "1984",
+                    "year": "1949",
+                    "author": "George Orwell",
+                    "publisher": "Secker & Warburg",
+                    "description": "Una novela distópica sobre un régimen totalitario.",
+                    "image": "https://images.cdn1.buscalibre.com/fit-in/360x360/10/42/10426f9e9ae4f7cd9eb5d33cef5aa143.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
+                },
+                {
+                    "id": "E7F8G9",
+                    "name": "Los pilares de la Tierra",
+                    "year": "1989",
+                    "author": "Ken Follett",
+                    "publisher": "Penguin Random House",
+                    "description": "La historia épica de la construcción de una catedral en la Edad Media.",
+                    "image": "https://images.cdn2.buscalibre.com/fit-in/360x360/61/32/61328f4133cbc217435c385c1eaefd74.jpg",
+                    "transaction": "venta",
+                    "price": "65000"
                 }
             ],
             "reviews": [
@@ -100,7 +166,7 @@
             ]
         },
         {
-            "id": "4",  
+            "id": "4",
             "nickname": "edwin",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.svg/1200px-JavaScript-logo.svg.png",
             "location": "medellín",
@@ -113,12 +179,34 @@
                     "id": "urtyr",
                     "name": "cien años de soledad",
                     "year": "1967",
-                    "author": "gabriel garcía árquez",
+                    "author": "gabriel garcía márquez",
                     "publisher": "editorial sudamericana",
                     "description": "lorem ipsum dolor sit amet, consectetur",
                     "image": "https://hispamer.com.ni/wp-content/uploads/2023/01/9786070728792.jpg",
                     "transaction": "venta",
                     "price": "55000"
+                },
+                {
+                    "id": "D4E5F6",
+                    "name": "El señor de los anillos: La comunidad del anillo",
+                    "year": "1954",
+                    "author": "J.R.R. Tolkien",
+                    "publisher": "Minotauro",
+                    "description": "Un hobbit emprende un viaje para destruir un anillo poderoso.",
+                    "image": "https://images.cdn3.buscalibre.com/fit-in/360x360/54/49/5449ba87a3e457a22dd6d0972b5c261e.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
+                },
+                {
+                    "id": "H1I2J3",
+                    "name": "La casa de los espíritus",
+                    "year": "1982",
+                    "author": "Isabel Allende",
+                    "publisher": "Sudamericana",
+                    "description": "La novela narra la historia de cuatro generaciones de la familia Trueba",
+                    "image": "https://images.cdn1.buscalibre.com/fit-in/360x360/15/ee/15ee29bdb3c45283fd7cb3cd347b75d4.jpg",
+                    "transaction": "intercambio",
+                    "price": "0"
                 }
             ],
             "reviews": [
