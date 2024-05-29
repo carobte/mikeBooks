@@ -1,10 +1,18 @@
+// get html elements
 const infoOwner = document.querySelector('#owner-info')
 let containerBooks = document.querySelector('#container-books')
+let containerComments = document.querySelector('#container-comments')
 
+// show information owner function
 function showInfoOwner() {
-    const owner = JSON.parse(localStorage.getItem('owner'))
+    const owner = JSON.parse(localStorage.getItem('owner')) // extract data in local storage
     console.log(owner.books)
+    const listBooksOwner = owner.books // get just books of owner
+    const commentsToOwner = JSON.parse(localStorage.getItem('userLogged')) // extract data in local storage of my user logged
+    const myReviews = commentsToOwner.reviews
+    console.log(myReviews)
 
+    // html content inner
     infoOwner.innerHTML += `
             <article class="row gap-4 p-4 justify-content-between align-items-center">
                 <div
@@ -23,7 +31,7 @@ function showInfoOwner() {
             </article>
     `
     
-    const listBooksOwner = owner.books
+    // foreach of each book
     listBooksOwner.forEach(book => {
         containerBooks.innerHTML += `
         <article class="card bg-our-white mt-5">
@@ -86,6 +94,17 @@ function showInfoOwner() {
         </div>
       </article>
         ` 
+
+    // foreach of my comments
+    myReviews.forEach(comment => {
+      containerComments.innerHTML += `
+        <div class="p-3 rounded-1 bg-creamy comment-box">
+          <p class="comment">
+            ${comment.msg}
+          </p>
+        </div>
+      `
+    })
     });
 }
 
