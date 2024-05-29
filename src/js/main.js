@@ -7,6 +7,7 @@ import * as bootstrap from 'bootstrap'
 //import functions from api.js
 import { getUsers, validateUsername, createUser } from "./api.js"
 
+
 // Get log in form data from index.html
 const loginForm = document.querySelector('#login-form')
 const usernameLogin = document.querySelector('#username-login')
@@ -32,6 +33,14 @@ radioInput.addEventListener('click', function (event) {
   }
 })
 
+//get logout button from index.html and create function for logout
+const logout = document.getElementById('log-out').addEventListener('click', () => {
+  if (confirm("¿Está seguro de cerrar sesión?")) {
+      localStorage.removeItem('userLogged')
+      window.location.href = "/"
+  }
+})
+
 // add submit event listener to login form
 loginForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -42,6 +51,7 @@ loginForm.addEventListener('submit', async (event) => {
       if (user.password === passwordLogin.value.toLowerCase()) {
       alert("Has iniciado sesión")
       localStorage.setItem("userLogged", JSON.stringify(user))
+      window.location.href = "/"
     } else {
       alert("Contraseña incorrecta")
     }
